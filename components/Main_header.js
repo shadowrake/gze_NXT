@@ -36,15 +36,12 @@ export default function Example() {
   </div>}
       {/* We use less vertical padding on card headers on desktop than on body sections */}
     </div>
-    <div className="px-4 py-5 sm:p-6">{<div className="sm:flex">
+    <div className="px-4 py-5 sm:p-6 bg-orange-400">{<div className=" justify-center sm:flex">
       <div className="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
       </div>
-      <div>
-        <h4 className="text-lg font-bold text-black">Lorem ipsum</h4>
-        <p className="mt-1 text-black">
-          Repudiandae sint consequuntur vel. Amet ut nobis explicabo numquam expedita quia omnis voluptatem. Minus
-          quidem ipsam quia iusto.
-        </p>
+      <div className=''>
+        <h2 className="text-lg font-bold text-white">Gamer.no page</h2>
+        <a href="https://www.gamer.no/klubber/greenzone-esports/171493" className='font-bold text-White'>Team page</a>
       </div>
     </div>}</div>
     <Team></Team>
