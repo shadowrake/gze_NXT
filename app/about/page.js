@@ -1,7 +1,7 @@
 import { FadeIn } from '@components/FadeIn'
 import Footer from '@components/footer'
 import NavBar from '@components/nav'
-import {getStaff} from '@lib/mongo/staff'
+import {getStaff} from '@lib/mongo/read/staff'
 
 async function fetchStaff() {
     const {staff} = await getStaff()

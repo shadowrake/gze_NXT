@@ -1,4 +1,4 @@
-import { getPlayers } from "@lib/mongo/staff";
+import { getPlayers } from "@lib/mongo/read/staff";
 import { NextResponse } from "next/server";
 
 export async function GET (req, res) {
