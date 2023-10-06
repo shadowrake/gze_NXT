@@ -1,8 +1,10 @@
 import Team from './Team_main'
+import News_main from './News_main'
+import Spons from './sponsors_bottom'
 
 export default function Main() {
     return <div className="divide-y divide-gray-200 overflow-hidden bg-white shadow">
-    <div className="px-4 py-5 sm:px-6">
+    <div className="">
       {<div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
     <img
       src="https://hermankristiansen.no/banner_gze_4k.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
@@ -34,7 +36,6 @@ export default function Main() {
       />
     </div>
   </div>}
-      {/* We use less vertical padding on card headers on desktop than on body sections */}
     </div>
     <div className="px-4 py-5 sm:p-6 bg-orange-400">{<div className=" justify-center sm:flex">
       <div className="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
@@ -45,7 +46,9 @@ export default function Main() {
       </div>
     </div>}</div>
     <Team></Team>
-  </div>
+    <News_main></News_main>
+    <Spons></Spons>
+      </div>
   }
 
 
