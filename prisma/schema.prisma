@@ -28,6 +28,7 @@ model news {
   datetime String
   desc     String
   imgUrl   String
+  imgAlt   String
   title    String
 }
 

@@ -1,5 +1,5 @@
 import Team from './Team_main'
-import News_main from './News_main'
+import News from './News_main'
 import Spons from './sponsors_bottom'
 
 export default function Main() {
@@ -46,7 +46,7 @@ export default function Main() {
       </div>
     </div>}</div>
       <Team></Team>
-      <News_main></News_main>
+      <News></News>
       <Spons></Spons>
     </div>
   }
