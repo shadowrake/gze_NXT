@@ -1,8 +1,8 @@
-import { getTeamSoon } from "@lib/mongo/read/teams/teamSoon.js";
+import { getNews } from "@lib/mongo/read/news/news.js";
 import { NextResponse } from "next/server";
 
 export async function GET (req, res) {
-    const players = await getTeamSoon()
+    const players = await getNews()
 
     return NextResponse.json(players)
 }

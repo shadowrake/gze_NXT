@@ -45,10 +45,10 @@ export default function Main() {
         <a href="https://www.gamer.no/klubber/greenzone-esports/171493" className='font-bold text-White'>Team page</a>
       </div>
     </div>}</div>
-    <Team></Team>
-    <News_main></News_main>
-    <Spons></Spons>
-      </div>
+      <Team></Team>
+      <News_main></News_main>
+      <Spons></Spons>
+    </div>
   }
 
 

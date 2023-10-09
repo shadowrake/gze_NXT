@@ -1,20 +1,10 @@
-import {getTeamSoon} from '@lib/mongo/read/teams/teamSoon.js'
-import {getTeam} from '@lib/mongo/read/teams/team.js'
-
-async function fetchTeam() {
-  const {team} = await getTeam()
-  return team
-}
-
-async function fetchTeamSoon() {
-  const {teamsSoon} = await getTeamSoon()
-  return teamsSoon
-}
+import {getTeams} from '@lib/prisma/read/teams.js'
+import {getTeamsSoon} from '@lib/prisma/read/teamsSoon.js'
 
   export default async function team_main() {
-    const team = await fetchTeam()
+    const {teams} = await getTeams()
 
-    const teamsSoon = await fetchTeamSoon()
+    const {teamsSoon} = await getTeamsSoon()
 
     return (
       <div className="bg-white">
@@ -23,7 +13,7 @@ async function fetchTeamSoon() {
             <h2 className="text-lg font-medium text-gray-900">Our teams</h2>
           </div>
           <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3">
-            {team.map((teams) => (
+            {teams.map((teams) => (
             <a href={teams.href}>
               <div key={teams._id} className="group relative">
                 <div className="aspect-h-3 aspect-w-4 overflow-hidden rounded-lg bg-gray-100">
