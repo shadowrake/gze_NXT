@@ -1,7 +1,8 @@
 import NavBar from '@components/nav'
 import Footer from '@components/footer'
 import { FadeIn } from '@components/FadeIn'
-import Team from '@components/Team_main'
+import News from '@components/news_main'
+
 import Sponsor from '@components/sponsors_bottom'
 
 export default async function About() {
@@ -9,7 +10,7 @@ export default async function About() {
     <main className='bg-white'>
       <NavBar />
       <FadeIn>
-      <Team/>
+      <News></News>
       <Sponsor></Sponsor>
       </FadeIn>
       <Footer />

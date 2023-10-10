@@ -1,4 +1,4 @@
-import {getPlayers} from '@lib/mongo/players/player_cs'
+import {getPlayers} from '@lib/mongo/read/players/player_cs'
 
 async function fetchPlayers() {
     const {players} = await getPlayers()
