@@ -11,11 +11,11 @@ export default async function playerPage({params}) {
     <main className="bg-white">
         <NavBar />
         <FadeIn>
-        <div className="px-4 py-5 sm:p-6 bg-orange-400">{<div className=" justify-center sm:flex">
+        <div className="px-4 py-5 sm:p-6 banner_gamer">{<div className=" justify-center sm:flex">
         <div className="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
         </div>
         <div className=''>
-        <a href={team.gamer_link} className='justify-center font-bold text-White'><div className="flex gap-x-2.5">
+        <a href={team.gamer_link} className='justify-center font-bold text-black'><div className="flex gap-x-2.5">
         <img src="https://i.bo3.no/image/319645/gamer2020-square.png" alt="" className="h-6 w-6 flex-none rounded-full bg-white/10" />
         {team.name} Gamer.no page
         </div>
