@@ -7,12 +7,6 @@ datasource db {
   url      = env("MONGODB_URI_Read")
 }
 
-type CsPlayerLinks {
-  twitch  String
-  twitter String
-  youtube String
-}
-
 type NewsAuthor {
   imgUrl String
   name   String
@@ -27,16 +21,16 @@ model Staff {
   role        String
 }
 
-model cs_player {
-  id          String        @id @default(auto()) @map("_id") @db.ObjectId
-  age         String
-  desc        String
-  imgAlt      String
-  imgUrl      String
-  links       CsPlayerLinks
-  name        String
-  nationality String
-  role        String
+model events {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+}
+
+model matches {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+}
+
+model media {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
 }
 
 model news {
@@ -50,12 +44,20 @@ model news {
   title    String
 }
 
+model players {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  keyword String
+  name    String
+}
+
 model teams {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  desc     String
-  imageAlt String
-  imageSrc String
-  name     String
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  desc       String
+  gamer_link String @map("gamer-link")
+  imageAlt   String
+  imageSrc   String
+  name       String
+  title      String
 }
 
 model teamsSoon {
