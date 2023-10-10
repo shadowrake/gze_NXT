@@ -1,7 +1,7 @@
 import {getNews} from '@lib/prisma/read/news.js'
 
   
-  export default async function News_main() {
+  export default async function news_main() {
     const {news} = await getNews()
     return (
       <div className="bg-white py-24 sm:py-32">

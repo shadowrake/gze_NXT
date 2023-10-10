@@ -2,7 +2,7 @@ import Team from './Team_main'
 import News from './News_main'
 import Spons from './sponsors_bottom'
 
-export default function Main() {
+export default function main_header() {
     return <div className="divide-y divide-gray-200 overflow-hidden bg-white shadow">
     <div className="">
       {<div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
