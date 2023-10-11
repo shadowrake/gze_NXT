@@ -80,7 +80,7 @@ const navigation = {
             ))}
           </div>
           <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-            &copy; <a href="https://hermankristiansen.no">2023 Herman Kristiansen All rights reserved.</a> 
+            &copy;2023 GreenZone Esports All rights reserved | <a href="https://hermankristiansen.no">Created by Herman Kristiansen.</a>
           </p>
         </div>
       </footer>

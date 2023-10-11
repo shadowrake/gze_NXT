@@ -42,9 +42,9 @@ export default function main_header() {
       <div className="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
       </div>
       <div className=''>
-      <a href="https://www.gamer.no/klubber/greenzone-esports/171493" className='justify-center font-bold text-black'><div className="flex gap-x-2.5">
+      <a href="https://www.gamer.no/klubber/greenzone-esports/171493" className='justify-center font-bold text-black '><div className="flex gap-x-2.5">
         <img src="https://i.bo3.no/image/319645/gamer2020-square.png" alt="gamer.no logo" className="h-6 w-6 flex-none rounded-full bg-white/10" />
-        Team Gamer.no page
+        <p className='inline-flex text-lg items-center border-b-2 border-transparent font-bold text-black-900 hover:border-green-900 hover:text-black-700'>Team Gamer.no page </p>
         </div>
         </a>
       </div>

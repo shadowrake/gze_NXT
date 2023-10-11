@@ -1,7 +1,7 @@
 import NavBar from '@components/nav'
 import Footer from '@components/footer'
 import { FadeIn } from '@components/FadeIn'
-import News from '@components/news.jsx'
+import News from '@components/news_archive.jsx'
 
 import Sponsor from '@components/sponsors_bottom'
 
