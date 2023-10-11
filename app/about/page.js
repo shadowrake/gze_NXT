@@ -16,9 +16,9 @@ export default async function About() {
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Who are GreenZone Esports</h2>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-            We are an Esports organisation, 
+            We are an Esports organization, 
             our staff is a friend group who are passionate about Esports.
-            We have a goal to recruit new/amateur players who are willing to be a part of our organisation and try to achive greatness.
+            We have a goal to recruit new/amateur players who are willing to be a part of our organization and try to achive greatness.
         </p>
         <p className="mt-6 text-lg leading-8 text-gray-600">
             Firstly, we are trying to gather teams for CSGO, R6 and LoL. 

@@ -21,7 +21,7 @@ export default async function Player({team}) {
           
           {match.map((person) => (
             <li key={person.name}>
-              <img className="aspect-[3/2] w-full rounded-2xl object-cover" src={person.imgUrl} alt="" />
+              <img className="aspect-[3/2] w-full rounded-2xl object-cover" src={person.imgUrl ? person.imgUrl : "https://hermankristiansen.no/person_not_founhd.png"} alt="" />
               <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">{person.name}</h3>
               <p className="text-base leading-7 text-gray-600">{person.role}</p>
               <ul role="list" className="mt-6 flex gap-x-6">
