@@ -22,7 +22,14 @@ model Staff {
 }
 
 model events {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  date     String
+  datetime String
+  desc     String
+  imgAlt   String
+  imgUrl   String
+  keyword  String
+  title    String
 }
 
 model matches {
@@ -30,7 +37,9 @@ model matches {
 }
 
 model media {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  imgAlt String
+  imgUrl String
 }
 
 model news {
@@ -41,6 +50,7 @@ model news {
   desc     String
   imgAlt   String
   imgUrl   String
+  keyword  String
   title    String
 }
 

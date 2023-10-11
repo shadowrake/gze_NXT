@@ -1,8 +1,9 @@
 import Team from './Team_main'
 import News from './News_main'
 import Spons from './sponsors_bottom'
+import Events from './Events_main'
 
-export default function main_he() {
+export default function main_header() {
     return <div className="divide-y divide-gray-200 overflow-hidden bg-white shadow">
     <div className="">
       {<div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
@@ -50,6 +51,7 @@ export default function main_he() {
     </div>}</div>
       <Team></Team>
       <News></News>
+      <Events></Events>
       <Spons></Spons>
     </div>
   }
