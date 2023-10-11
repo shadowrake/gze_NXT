@@ -4,6 +4,7 @@ import NavBar from "@components/nav";
 import Player from "./player";
 import Sponsor from "@components/sponsors_bottom";
 import { getTeamsByName } from "@lib/prisma/read/teams";
+import Matches from "./matches";
 
 export default async function playerPage({params}) {
     const { team } = await getTeamsByName(params.id)
@@ -24,6 +25,7 @@ export default async function playerPage({params}) {
         </div>
         </div>}</div>
         <Player team = {team}/>
+        <Matches team = {team}></Matches>
         <Sponsor />
         </FadeIn>
         <Footer />
