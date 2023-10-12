@@ -1,8 +1,8 @@
 import { CalendarDaysIcon,InformationCircleIcon } from '@heroicons/react/20/solid'
-import { getEventsById } from '@lib/prisma/read/events.js'
-import NavBar from '@components/nav'
-import Footer from '@components/footer'
-import {FadeIn} from '@components/fadein'
+import { getEventsById } from '../../../lib/prisma/read/events.js'
+import NavBar from '../../../components/nav'
+import Footer from '../../../components/footer'
+import {FadeIn} from '../../../components/FadeIn'
 
 
 export default async function event({params}) {

@@ -1,4 +1,4 @@
-import { getEvents } from '@lib/prisma/read/events.js'
+import { getEvents } from '../lib/prisma/read/events.js'
 
   
   export default async function events_main() {

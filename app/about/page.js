@@ -1,8 +1,8 @@
-import { FadeIn } from '@components/FadeIn'
-import Footer from '@components/footer'
-import NavBar from '@components/nav'
-import {getStaff} from '@lib/prisma/read/staff.js'
-import Sponsor from '@components/sponsors_bottom'
+import { FadeIn } from '../../components/FadeIn'
+import Footer from '../../components/footer'
+import NavBar from '../../components/nav'
+import {getStaff} from '../../lib/prisma/read/staff.js'
+import Sponsor from '../../components/sponsors_bottom'
 
 export default async function About() {
     const { staff } = await getStaff()

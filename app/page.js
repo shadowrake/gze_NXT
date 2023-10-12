@@ -1,7 +1,7 @@
-import NavBar from '../components/nav'
-import Footer from '../components/footer'
-import Main from '../components/Main_header'
-import { FadeIn } from '@components/FadeIn'
+import NavBar from '../components/nav.js'
+import Footer from '../components/footer.js'
+import Main from '../components/Main_header.js'
+import { FadeIn } from '../components/FadeIn.jsx'
 
 export default function Home() {
   return (

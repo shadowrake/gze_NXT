@@ -1,4 +1,4 @@
-import { getMatches } from "@lib/prisma/read/matches.js"
+import { getMatches } from "../../../lib/prisma/read/matches.js"
 
 export default async function Player({team}) {
     const {matches} = await getMatches()

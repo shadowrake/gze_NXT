@@ -1,13 +1,13 @@
-import { FadeIn } from "@components/FadeIn";
-import Footer from "@components/footer";
-import NavBar from "@components/nav";
+import { FadeIn } from "../../../components/FadeIn";
+import Footer from "../../../components/footer";
+import NavBar from "../../../components/nav";
 import Player from "./player";
-import Sponsor from "@components/sponsors_bottom";
-import { getTeamsByName } from "@lib/prisma/read/teams";
+import Sponsor from "../../../components/sponsors_bottom";
+import { getTeamsById } from "../../../lib/prisma/read/teams";
 import Matches from "./matches";
 
 export default async function playerPage({params}) {
-    const { team } = await getTeamsByName(params.id)
+    const { team } = await getTeamsById(params.id)
     return (
     <main className="bg-white">
         <NavBar />

@@ -1,4 +1,4 @@
-import {getNews} from '@lib/prisma/read/news.js'
+import {getNews} from '../lib/prisma/read/news.js'
 
   
   export default async function news_main() {

@@ -1,7 +1,7 @@
-import Footer from "@components/footer";
-import NavBar from "@components/nav";
+import Footer from "../components/footer.js";
+import NavBar from "../components/nav.js";
 
-export default function Example() {
+export default function notFound() {
   return (
     <>
       <main className="relative isolate min-h-full">

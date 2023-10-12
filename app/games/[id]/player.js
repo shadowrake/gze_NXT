@@ -1,4 +1,4 @@
-import { getCsPlayer } from "@lib/prisma/read/cs_player"
+import { getCsPlayer } from "../../../lib/prisma/read/cs_player"
 
 export default async function Player({team}) {
     const {playerCS} = await getCsPlayer()

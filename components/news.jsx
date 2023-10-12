@@ -1,4 +1,4 @@
-import {getNewsReverseLimitTen} from '@lib/prisma/read/news.js'
+import {getNewsReverseLimitTen} from '../lib/prisma/read/news.js'
 
   
   export default async function news_main() {

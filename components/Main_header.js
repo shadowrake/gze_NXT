@@ -1,14 +1,14 @@
 import Team from './Team_main'
-import News from './News_main'
+import News from './news_main'
 import Spons from './sponsors_bottom'
-import Events from './Events_main'
+import Events from './events_main'
 
 export default function main_header() {
     return <div className="divide-y divide-gray-200 overflow-hidden bg-white shadow">
     <div className="">
-      {<div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
+      {<div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-40 lg:px-8">
     <img
-      src="https://hermankristiansen.no/banner_gze_4k.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+      src="https://hermankristiansen.no/test2.png"
       alt=""
       className="absolute inset-0 -z-10 h-full w-full object-cover"
     />

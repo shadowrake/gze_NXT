@@ -63,6 +63,16 @@ model players {
   name    String
 }
 
+model teamStaff {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  age         String
+  img         String
+  keyword     String
+  name        String
+  nationality String
+  role        String
+}
+
 model teams {
   id         String @id @default(auto()) @map("_id") @db.ObjectId
   desc       String
@@ -75,8 +85,16 @@ model teams {
 
 model teamsSoon {
   id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  desc     String?
   href     String?
   imageAlt String
   imageSrc String
   name     String
+  title    String?
+}
+
+model teamsinput {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  keyword String
+  name    String
 }
