@@ -85,16 +85,17 @@ model teams {
 
 model teamsSoon {
   id       String  @id @default(auto()) @map("_id") @db.ObjectId
-  desc     String?
+  desc     String
   href     String?
   imageAlt String
   imageSrc String
   name     String
-  title    String?
+  title    String
 }
 
 model teamsinput {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  dummy   String?
   keyword String
   name    String
 }

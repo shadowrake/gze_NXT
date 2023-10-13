@@ -9,7 +9,7 @@ export default async function rec_team({teamSoon}) {
 
     return (
         <div className="container mx-auto sm:px-6 lg:px-8">{
-            <form>
+            
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-lg font-semibold leading-7 text-gray-900">Recruitment form for {teamSoon.title}</h2>
@@ -19,7 +19,6 @@ export default async function rec_team({teamSoon}) {
           <Contact input = {input}></Contact>
         </div>
         </div>
-    </form>
         }</div>
     )
 }
