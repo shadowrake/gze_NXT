@@ -5,7 +5,7 @@ import React from "react"
 import { useState } from "react";
 
 import { toast } from "sonner";
-
+import ContactForm from "@components/contact_form_email";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm, SubmitHandler, useFieldArray, set } from "react-hook-form";

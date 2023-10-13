@@ -36,7 +36,7 @@ import {getTeamsSoon} from '../lib/prisma/read/teamsSoon.js'
           <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3">
             {teamsSoon.map((teams) => (
               <div key={teams.id}>
-              <a href={`/recruitment/${teams.id}`}>
+              <a href={`/recruitment/games/${teams.id}`}>
               <div  className="group relative">
                 <div className="aspect-h-3 aspect-w-4 overflow-hidden rounded-lg bg-gray-100">
                 <div class="bg-red-100 relative group">

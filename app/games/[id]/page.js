@@ -16,12 +16,11 @@ export default async function playerPage({params}) {
         <div className="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
         </div>
         <div className=''>
-        <a href={team.gamer_link} className='justify-center font-bold text-black'><div className="flex gap-x-2.5">
+        <div className="flex gap-x-2.5">
         <img src="https://i.bo3.no/image/319645/gamer2020-square.png" alt="" className="h-6 w-6 flex-none rounded-full bg-white/10" />
-        <p className="inline-flex text-lg items-center border-b-2 border-transparent font-bold text-black-900 hover:border-green-900 hover:text-black-700">
-        {team.title} Gamer.no page </p>
+        <a href={team.gamer_link} className='justify-center font-bold text-black'><p className="inline-flex text-lg items-center border-b-2 border-transparent font-bold text-black-900 hover:border-green-900 hover:text-black-700">
+        {team.title} Gamer.no page </p></a>
         </div>
-        </a>
         </div>
         </div>}</div>
         <Player team = {team}/>
