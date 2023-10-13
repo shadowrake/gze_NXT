@@ -1,5 +1,5 @@
 import { getTeamsInput } from "../../../../lib/prisma/read/teaminput"
-import Contact from "./contact.tsx"
+import Contact from "./contact"
 
 export default async function rec_team({teamSoon}) {
 

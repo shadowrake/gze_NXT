@@ -79,7 +79,7 @@ export default function Contact({ input }: Input)  {
                     autoComplete="username"
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="Email"
-                    {...register("email")} />
+                    {...register("email", {required: "You need a vaild email"})} />
           </div>
           {errors.email?.message && (
                     <p className="text-sm text-red-400">{errors.email.message}</p>
@@ -96,7 +96,7 @@ export default function Contact({ input }: Input)  {
                     autoComplete="username"
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="discord username"
-                    {...register("gamerTag")} />
+                    {...register("gamerTag", {required: "You need to write your gamer tag here"})} />
           </div>
           {errors.gamerTag?.message && (
                     <p className="text-sm text-red-400">{errors.gamerTag.message}</p>
