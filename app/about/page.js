@@ -5,11 +5,13 @@ import {getStaff} from '../../lib/prisma/read/staff.js'
 import Sponsor from '../../components/sponsors_bottom'
 
 export default async function About() {
+    // get the staff from the database
     const { staff } = await getStaff()
 
   return (
     <main className='bg-white'>
       <NavBar />
+      {/* creates an fadein effect on the page */}
       <FadeIn>
       <Sponsor />
         <div className="bg-white px-6 py-24 sm:py-32 lg:px-8">

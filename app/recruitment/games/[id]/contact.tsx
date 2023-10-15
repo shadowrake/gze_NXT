@@ -15,6 +15,7 @@ import { addEntry, sendEmail } from "app/actions";
 
 
 
+//define the interface for the props
 type Input = {
   email: string;
   gamerTag: string;
@@ -28,6 +29,7 @@ type Input = {
 export default function Contact({ input }: Input)  {
     const [data, setData] = useState<Input>();
 
+    //Define the formstate and readys the form for submission
     const {
       register,
       handleSubmit,
@@ -43,6 +45,8 @@ export default function Contact({ input }: Input)  {
         input: input,
       },
     });
+
+    //Define the uses the sendEmail function to send an email on submit and resets the form on success
     const processForm: SubmitHandler<Input> = async data => {
       const result = await sendEmail(data);
       setData(data);
@@ -102,6 +106,7 @@ export default function Contact({ input }: Input)  {
                     <p className="text-sm text-red-400">{errors.gamerTag.message}</p>
                   )}
           </div>
+          {/* Maps passed down prop to create input based on how many entries there are in the database */}
           {input.map((person: { name: string ; id: React.Key }, index) => (
             <div key={person.id}>
               <label htmlFor="username" className="mt-2 block text-sm font-medium leading-6 text-gray-900">

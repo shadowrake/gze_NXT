@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <main className='bg-white'>
       <NavBar></NavBar>
+      {/* creates an fadein effect on the page */}
       <FadeIn>
       <Main></Main>
       </FadeIn>

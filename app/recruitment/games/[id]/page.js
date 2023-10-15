@@ -10,7 +10,9 @@ import { getTeamsSoonById } from '../../../../lib/prisma/read/teamsSoon.js'
     return (
         <main className='bg-white'>
             <NavBar></NavBar>
+            {/* creates an fadein effect on the page */}
             <FadeIn>
+            {/* passes down the teamsoon param to rec_team */}
             <Teams teamSoon = {teamSoon}></Teams>
             </FadeIn>
             <Footer></Footer>

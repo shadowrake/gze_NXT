@@ -7,10 +7,12 @@ import { getTeamsById } from "../../../lib/prisma/read/teams";
 import Matches from "./matches";
 
 export default async function playerPage({params}) {
+    // get the team from api by id
     const { team } = await getTeamsById(params.id)
     return (
     <main className="bg-white">
         <NavBar />
+        {/* creates an fadein effect on the page */}
         <FadeIn>
         <div className="px-4 py-5 sm:p-6 banner_gamer">{<div className=" justify-center sm:flex">
         <div className="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
@@ -23,6 +25,7 @@ export default async function playerPage({params}) {
         </div>
         </div>
         </div>}</div>
+        {/* sends the team prop to both player and matches components */}
         <Player team = {team}/>
         <Matches team = {team}></Matches>
         <Sponsor />

@@ -1,5 +1,6 @@
 import {z} from 'zod';
 
+//Defines the schema for the data sent from the client side form and validates it before sending it to the server
 export const FormDataSchema = z.object({
     gamerTag: z.string().nonempty("Please enter your gamer tag here"),
     email: z.string().email("Please enter a valid email"),

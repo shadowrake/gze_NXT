@@ -1,8 +1,10 @@
 import { getMatches } from "../../../lib/prisma/read/matches.js"
 
 export default async function Player({team}) {
+    // Fetch data from external API
     const {matches} = await getMatches()
 
+    // Fliter data from external API to match today's date and team with the right keyword defined in the database
     const match = matches.filter((player) => player.date >= Date.now() && team.name === player.keyword)
 
     return (
@@ -18,7 +20,7 @@ export default async function Player({team}) {
           role="list"
           className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
         >
-          
+          {/* maps data from api */}
           {match.map((person) => (
             <li key={person.name}>
               <img className="aspect-[3/2] w-full rounded-2xl object-cover" src={person.imgUrl ? person.imgUrl : "https://hermankristiansen.no/person_not_founhd.png"} alt="" />

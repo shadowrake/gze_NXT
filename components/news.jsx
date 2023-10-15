@@ -2,6 +2,7 @@ import {getNewsReverseLimitTen} from '../lib/prisma/read/news.js'
 
   
   export default async function news_main() {
+    // Fetch data from external API
     const {news} = await getNewsReverseLimitTen()
     return (
       <div className="bg-white py-24 sm:py-32">
@@ -13,6 +14,7 @@ import {getNewsReverseLimitTen} from '../lib/prisma/read/news.js'
             </p>
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            {/* maps data from api */}
             {news.map((post) => (
               <article
                 key={post.id}

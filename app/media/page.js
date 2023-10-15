@@ -10,6 +10,7 @@ export default async function main_media() {
     return (
         <main className='bg-white'>
             <NavBar></NavBar>
+            {/* creates an fadein effect on the page */}
             <FadeIn>
             <Media media = {media}></Media>
             <Spons></Spons>

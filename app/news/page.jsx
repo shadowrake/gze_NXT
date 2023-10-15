@@ -9,6 +9,7 @@ export default async function About() {
   return (
     <main className='bg-white'>
       <NavBar />
+      {/* creates an fadein effect on the page */}
       <FadeIn>
       <News></News>
       <Sponsor></Sponsor>

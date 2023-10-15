@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {children}
+        {/* defines toast as seen after submiting an email */}
         <Toaster position="top-right" richColors expand closeButton></Toaster>
         </body>
     </html>

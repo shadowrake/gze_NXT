@@ -1,9 +1,11 @@
+//define the interface for the props
 interface ContactFormInputs {
     email: string;
     gamerTag: string;
     input: { name: string; id: React.Key; dummy: string}[];
   };
 
+//define the component with the props for use in as a email template
 const ContactForm: React.FC<Readonly<ContactFormInputs>> = ({ email, gamerTag, input }) => {
     return <div>
         <h1></h1>

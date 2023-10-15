@@ -6,10 +6,12 @@ import {FadeIn} from '../../../components/FadeIn'
 
 
 export default async function event({params}) {
+  // Fetch necessary data for the blog post using params.id
   const { event } = await getEventsById(params.id)
   return (
     <main className="bg-white">
     <NavBar />
+    {/* creates an fadein effect on the page */}
     <FadeIn>
     <div className="bg-white px-6 py-32 lg:px-8">
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">

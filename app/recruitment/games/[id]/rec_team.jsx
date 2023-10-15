@@ -3,8 +3,10 @@ import Contact from "./contact"
 
 export default async function rec_team({teamSoon}) {
 
+    // Fetch data from external API
     const {teamsinput} = await getTeamsInput()
 
+    // Fliter data from external API to match the right team with the right keyword defined in the database
     const input = teamsinput.filter((input) => teamSoon.name === input.keyword)
 
     return (
@@ -16,6 +18,7 @@ export default async function rec_team({teamSoon}) {
           <p className="mt-1 text-sm leading-6 text-gray-600">
             {teamSoon.desc}
           </p>
+          {/* passes down the filtered input to contact.tsx */}
           <Contact input = {input}></Contact>
         </div>
         </div>

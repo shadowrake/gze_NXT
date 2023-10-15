@@ -1,7 +1,7 @@
 import {getTeamsSoon} from '../lib/prisma/read/teamsSoon.js'
 
   export default async function team_main() {
-
+    // Fetch data from external API
     const {teamsSoon} = await getTeamsSoon()
 
     return (
@@ -11,6 +11,7 @@ import {getTeamsSoon} from '../lib/prisma/read/teamsSoon.js'
             <h2 className="text-lg font-medium text-gray-900">Apply for team</h2>
           </div>
           <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3">
+            {/* maps data from api */}
             {teamsSoon.map((teams) => (
               <div key={teams.id}>
               <a href={`/recruitment/games/${teams.id}`}>
