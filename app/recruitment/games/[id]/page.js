@@ -3,6 +3,7 @@ import { FadeIn } from '../../../../components/FadeIn.jsx'
 import Footer from '../../../../components/footer.js'
 import Teams from './rec_team.jsx'
 import { getTeamsSoonById } from '../../../../lib/prisma/read/teamsSoon.js'
+import Sponsor from '../../../../components/sponsors_bottom'
  
  export default async function recTeam({params}) {
     const { teamSoon } = await getTeamsSoonById(params.id)
@@ -14,6 +15,7 @@ import { getTeamsSoonById } from '../../../../lib/prisma/read/teamsSoon.js'
             <FadeIn>
             {/* passes down the teamsoon param to rec_team */}
             <Teams teamSoon = {teamSoon}></Teams>
+            <Sponsor></Sponsor>
             </FadeIn>
             <Footer></Footer>
         </main>

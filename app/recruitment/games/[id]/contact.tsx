@@ -68,7 +68,7 @@ export default function Contact({ input }: Input)  {
         <div className="mt-10 sm:mt-0">
           <form
             onSubmit={handleSubmit(processForm)}
-            className="space-y-8 divide-y divide-gray-200"
+            className="space-y-8 divide-y divide-gray-200 mx-auto max-w-2xl"
           >
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <div className="sm:col-span-4">
@@ -135,21 +135,17 @@ export default function Contact({ input }: Input)  {
         </div>
 
               <div className="mt-6 flex items-center justify-end gap-x-6">
-                <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
+                <button type="button" className="mt-6 text-sm font-semibold leading-6 text-gray-900">
                   Cancel
                 </button>
                 <button
-                  className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="mt-6 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
               </div>
       </form>
-
-      <div className="flex-1 rounded-lg text-black">
-        <pre>{JSON.stringify(data, null, 2)}</pre>
-      </div>
     </div>
     )
 }

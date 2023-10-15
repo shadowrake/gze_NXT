@@ -14,7 +14,7 @@ export default async function playerPage({params}) {
         <NavBar />
         {/* creates an fadein effect on the page */}
         <FadeIn>
-        <div className="px-4 py-5 sm:p-6 banner_gamer">{<div className=" justify-center sm:flex">
+        <div className="px-4 py-5 sm:p-6 bg-greenzone">{<div className=" justify-center sm:flex">
         <div className="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
         </div>
         <div className=''>
