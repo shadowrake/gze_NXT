@@ -1,9 +1,11 @@
-import { getCsPlayer } from "@lib/prisma/read/cs_player"
+import { getCsPlayer } from "../../../lib/prisma/read/cs_player"
 
 export default async function Player({team}) {
+    // Fetch data from external API
     const {playerCS} = await getCsPlayer()
 
 
+    // Fliter data from external API to match the right team with the right keyword defined in the database
     const player = playerCS.filter((player) => team.name === player.keyword)
     return (
       <div className="bg-white py-24 sm:py-32">
@@ -19,9 +21,10 @@ export default async function Player({team}) {
           className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
         >
           
+          {/* maps data from api */}
           {player.map((person) => (
             <li key={person.name}>
-              <img className="aspect-[3/2] w-full rounded-2xl object-cover" src={person.imgUrl} alt="" />
+              <img className="aspect-[3/2] w-full rounded-2xl object-cover" src={person.imgUrl ? person.imgUrl : "https://hermankristiansen.no/person_not_founhd.png"} alt="" />
               <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">{person.name}</h3>
               <p className="text-base leading-7 text-gray-600">{person.role}</p>
               <ul role="list" className="mt-6 flex gap-x-6">

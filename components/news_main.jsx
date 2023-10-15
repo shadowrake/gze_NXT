@@ -1,8 +1,9 @@
-import {getNews} from '@lib/prisma/read/news.js'
+import {getNewsReverseLimitThree} from '../lib/prisma/read/news.js'
 
   
-  export default async function News_main() {
-    const {news} = await getNews()
+  export default async function news_main() {
+    // Fetch data from external API
+    const {news} = await getNewsReverseLimitThree()
     return (
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -13,10 +14,11 @@ import {getNews} from '@lib/prisma/read/news.js'
             </p>
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            {/* maps data from api */}
             {news.map((post) => (
               <article
                 key={post.id}
-                className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
+                className="relative isolate flex flex-col overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
               >
                 <img src={post.imgUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" />
                 <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
@@ -43,7 +45,7 @@ import {getNews} from '@lib/prisma/read/news.js'
                   </a>
                 </h3>
               </article>
-            ))}
+            ))} 
           </div>
         </div>
       </div>

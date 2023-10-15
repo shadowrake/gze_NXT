@@ -1,24 +1,26 @@
-import { FadeIn } from '@components/FadeIn'
-import Footer from '@components/footer'
-import NavBar from '@components/nav'
-import {getStaff} from '@lib/prisma/read/staff.js'
-import Sponsor from '@components/sponsors_bottom'
+import { FadeIn } from '../../components/FadeIn'
+import Footer from '../../components/footer'
+import NavBar from '../../components/nav'
+import {getStaff} from '../../lib/prisma/read/staff.js'
+import Sponsor from '../../components/sponsors_bottom'
 
 export default async function About() {
+    // get the staff from the database
     const { staff } = await getStaff()
 
   return (
     <main className='bg-white'>
       <NavBar />
+      {/* creates an fadein effect on the page */}
       <FadeIn>
       <Sponsor />
         <div className="bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Who are GreenZone Esports</h2>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-            We are an Esports organisation, 
+            We are an Esports organization, 
             our staff is a friend group who are passionate about Esports.
-            We have a goal to recruit new/amateur players who are willing to be a part of our organisation and try to achive greatness.
+            We have a goal to recruit new/amateur players who are willing to be a part of our organization and try to achive greatness.
         </p>
         <p className="mt-6 text-lg leading-8 text-gray-600">
             Firstly, we are trying to gather teams for CSGO, R6 and LoL. 

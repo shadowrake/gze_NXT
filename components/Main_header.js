@@ -1,13 +1,14 @@
 import Team from './Team_main'
-import News from './News_main'
+import News from './news_main'
 import Spons from './sponsors_bottom'
+import Events from './events_main'
 
-export default function Main() {
-    return <div className="divide-y divide-gray-200 overflow-hidden bg-white shadow">
+export default function main_header() {
+    return <div className="divide-gray-200 overflow-hidden bg-white shadow">
     <div className="">
-      {<div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
+      {<div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-40 lg:px-8">
     <img
-      src="https://hermankristiansen.no/banner_gze_4k.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+      src="https://hermankristiansen.no/test2.png"
       alt=""
       className="absolute inset-0 -z-10 h-full w-full object-cover"
     />
@@ -37,19 +38,21 @@ export default function Main() {
     </div>
   </div>}
     </div>
-    <div className="px-4 py-5 sm:p-6 bg-orange-400">{<div className=" justify-center sm:flex">
+    <div className="px-4 py-5 sm:p-6 banner_gamer">{<div className=" justify-center sm:flex">
       <div className="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
       </div>
       <div className=''>
-      <a href="https://www.gamer.no/klubber/greenzone-esports/171493" className='justify-center font-bold text-White'><div className="flex gap-x-2.5">
+      <div className="flex gap-x-2.5">
         <img src="https://i.bo3.no/image/319645/gamer2020-square.png" alt="gamer.no logo" className="h-6 w-6 flex-none rounded-full bg-white/10" />
-        Team Gamer.no page
-        </div>
+        <a href="https://www.gamer.no/klubber/greenzone-esports/171493" className='justify-center font-bold text-black '><p className='inline-flex text-lg items-center border-b-2 border-transparent font-bold text-black-900 hover:border-green-900 hover:text-black-700'>Team Gamer.no page </p>
         </a>
+        </div>
+        
       </div>
     </div>}</div>
       <Team></Team>
       <News></News>
+      <Events></Events>
       <Spons></Spons>
     </div>
   }
