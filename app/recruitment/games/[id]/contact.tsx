@@ -68,7 +68,7 @@ export default function Contact({ input }: Input)  {
         <div className="mt-10 sm:mt-0">
           <form
             onSubmit={handleSubmit(processForm)}
-            className="space-y-8 divide-y divide-gray-200"
+            className="space-y-8 divide-y divide-gray-200 mx-auto max-w-2xl"
           >
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <div className="sm:col-span-4">
