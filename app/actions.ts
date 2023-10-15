@@ -47,8 +47,8 @@ const {input, email, gamerTag} = result.data;
 try{
 //Sends the email to the email address specified in the "to" field
 const data = await resend.emails.send({
-    from: 'Greenzone Esports Recruitment <herman.kristiansen@greenzoneesports.com>',
-    to: ['herman.kristiansen@greenzoneesports.com'],
+    from: 'Greenzone Esports Recruitment <recruitment@greenzoneesports.com>',
+    to: ['recruitment@greenzoneesports.com'],
     subject: 'New recruitment application',
     text: `Input: ${input}\nEmail: ${email}\nGamer tag: ${gamerTag}`,
     react: ContactForm({input, email, gamerTag})
