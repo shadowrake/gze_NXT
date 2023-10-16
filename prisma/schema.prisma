@@ -1,15 +1,12 @@
-// define the prisma client
- generator client {
+generator client {
   provider = "prisma-client-js"
 }
 
-//define the datasource
 datasource db {
   provider = "mongodb"
   url      = env("MONGODB_URI_Read")
 }
 
-// define the schema types and relations between them, all is fetched from the database
 type NewsAuthor {
   imgUrl String
   name   String
@@ -25,9 +22,9 @@ model Staff {
 }
 
 model events {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
   date     String
-  datetime String
+  datetime DateTime @db.Date
   desc     String
   imgAlt   String
   imgUrl   String

@@ -6,6 +6,7 @@ import { getEvents } from '../lib/prisma/read/events.js'
     // Fetch data from external API
     const { event } = await getEvents()
 
+    const events = event.filter((events) => events.datetime >= Date.now())
     return (
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -17,7 +18,7 @@ import { getEvents } from '../lib/prisma/read/events.js'
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {/* maps data from api */}
-            {event.map((post) => (
+            {events.map((post) => (
               <article
                 key={post.id}
                 className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
@@ -49,6 +50,9 @@ import { getEvents } from '../lib/prisma/read/events.js'
               </article>
             ))}
           </div>
+          <a href='/events/archive' className='text-black'>
+          <p className='mt-16 bg-green-200 text-center relative inline-flex items-center justify-center rounded-md p-2 text-lg font-bold hover:bg-green-300 hover:text-black-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>Previous events</p>
+          </a>
         </div>
       </div>
     )

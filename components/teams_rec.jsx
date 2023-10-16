@@ -16,7 +16,7 @@ import {getTeamsSoon} from '../lib/prisma/read/teamsSoon.js'
               <div key={teams.id}>
               <a href={`/recruitment/games/${teams.id}`}>
               <div  className="group relative">
-                <div className="aspect-h-3 aspect-w-4 overflow-hidden rounded-lg bg-gray-100">
+                <div className="overflow-hidden rounded-lg bg-gray-100">
                 <div class="bg-red-100 relative group">
                   <img src={teams.imageSrc} alt={teams.imageAlt} className="object-contain h-190 w-290 object-center" />
                   <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 inset-y-0 flex justify-center items-center text-xl bg-green-200 md:bg-opacity-40 text-black font-semibold"></div>

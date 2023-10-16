@@ -1,9 +1,9 @@
-import NavBar from '../../components/nav'
-import Footer from '../../components/footer'
-import { FadeIn } from '../../components/FadeIn'
-import Events from '../../components/events'
+import NavBar from '../../../components/nav'
+import Footer from '../../../components/footer'
+import { FadeIn } from '../../../components/FadeIn'
+import Events from '../../../components/events_main'
 
-import Sponsor from '../../components/sponsors_bottom'
+import Sponsor from '../../../components/sponsors_bottom'
 
 export default async function About() {
   return (
