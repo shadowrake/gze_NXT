@@ -26,7 +26,7 @@ import {getNewsReverseLimitTen} from '../lib/prisma/read/news.js'
   
                 <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
                   <time dateTime={post.datetime} className="mr-8">
-                    {post.date}
+                    {post.datetime.toDateString()}
                   </time>
                   <div className="-ml-4 flex items-center gap-x-4">
                     <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">

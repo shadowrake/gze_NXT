@@ -23,7 +23,6 @@ model Staff {
 
 model events {
   id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  date     String
   datetime DateTime @db.Date
   desc     String
   imgAlt   String
@@ -48,8 +47,7 @@ model media {
 model news {
   id       String     @id @default(auto()) @map("_id") @db.ObjectId
   author   NewsAuthor
-  date     String
-  datetime String
+  datetime DateTime   @db.Date
   desc     String
   imgAlt   String
   imgUrl   String
