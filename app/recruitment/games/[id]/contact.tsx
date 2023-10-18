@@ -125,18 +125,16 @@ export default function Contact({ input }: Input)  {
                 {person.name}
               </label>
               <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                  <input
+                  <textarea
                     key={person.id}
-                    type="text"
+                    
                     id="username"
                     autoComplete="username"
-                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 pl-1 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     placeholder={person.name}
                     {...register(`input.${index}.dummy`, { required: "Must have txt" })}
                   />
                   
-                </div>
               </div>
               {errors.input?.[index]?.dummy?.message && (
                     <p className="text-sm text-red-400">{errors.input?.[index]?.dummy?.message}</p>
@@ -166,6 +164,7 @@ export default function Contact({ input }: Input)  {
                   onChange={handleCaptchaSubmission}
                 />
               </div>
+              <p className="text-red-900 text-center">All forms submitted will be deleted within 3 months</p>
       </form>
     </div>
     )

@@ -271,6 +271,7 @@ export default function Contact()  {
                   onChange={handleCaptchaSubmission}
                 />
               </div>
+              <p className="text-red-900 text-center">All forms submitted will be deleted within 3 months</p>
       </form>
     </div>
     )
