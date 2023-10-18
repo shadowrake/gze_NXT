@@ -31,11 +31,19 @@ export default async function rec_team({teamSoon}) {
             </a>
           </div>
           <div>
-          <h3 className="mt-6 text-lg font-semibold leading-7 text-gray-900 mx-2">OR</h3>
+          <h3 className="mt-6 text-lg font-bold leading-7 text-gray-900 mx-2">OR</h3>
           <div className="mt-2 space-y-4">
+            { teamSoon.manager === "" ? 
             <p className="mt-4 text-xl font-semibold leading-7 text-gray-900">
+              We are looking for a team manager for {teamSoon.title}: <a href="/recruitment/staff" className="rounded-md bg-greenzone font-bold hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                Apply here
+              </a>
+            </p>
+            :
+            <p className="mt-4 text-xl font-bold leading-7 text-gray-900">
               Contact our team manager on discord: <bold>{teamSoon.manager}</bold>
             </p>
+            }
           </div>
           </div>
         </div>

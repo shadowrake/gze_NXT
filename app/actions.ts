@@ -2,6 +2,8 @@
 
 import { z } from "zod";
 
+import axios from "axios";
+
 import { Resend } from 'resend';
 
 import { FormDataSchema } from "../lib/utils/schema";
@@ -96,4 +98,15 @@ export async function sendEmailS(data: Inputs) {
   if(result.error) {
   return {success: false, error: result.error.format()};
   }
+  }
+
+  export async function verifyCaptcha(token: string | null) {
+    const res = await axios.post(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${token}`
+    )
+    if (res.data.success) {
+      return "success!"
+    } else {
+      throw new Error("Failed Captcha")
+    }
   }

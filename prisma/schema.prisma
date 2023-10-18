@@ -61,6 +61,12 @@ model players {
   name    String
 }
 
+model staffRec {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  keyword String
+  name    String
+}
+
 model teamStaff {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
   age         String
@@ -87,6 +93,8 @@ model teamsSoon {
   href     String?
   imageAlt String
   imageSrc String
+  keyword  String
+  manager  String
   name     String
   title    String
 }

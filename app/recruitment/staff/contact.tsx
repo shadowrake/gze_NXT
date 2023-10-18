@@ -3,7 +3,7 @@
 import React from "react"
 
 import { useState } from "react";
-
+import ReCaptcha from "react-google-recaptcha"
 import { toast } from "sonner";
 import ContactForm from "@components/contact_form_email";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,7 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler, useFieldArray, set } from "react-hook-form";
 import { FormDataSchemas } from "@lib/utils/schemaS";
 import { z } from "zod";
-import { addEntry, sendEmailS } from "app/actions";
+import { addEntry, sendEmailS, verifyCaptcha } from "app/actions";
 
 
 
@@ -23,6 +23,8 @@ type Input = z.infer<typeof FormDataSchemas>
 
 export default function Contact()  {
     const [data, setData] = useState<Input>();
+    const recaptchaRef = React.useRef<ReCaptcha>(null);
+    const [isVerified, setIsverified] = useState<boolean>(false);
 
     //Define the formstate and readys the form for submission
     const {
@@ -52,6 +54,13 @@ export default function Contact()  {
       toast.error("Error sending email");
 
       
+    }
+
+    async function handleCaptchaSubmission(token: string | null) {
+      // Server function to verify captcha
+      await verifyCaptcha(token)
+        .then(() => setIsverified(true))
+        .catch(() => setIsverified(false))
     }
     
     return (
@@ -242,16 +251,25 @@ export default function Contact()  {
           </div>
         </div>
 
-              <div className="mt-6 flex items-center justify-end gap-x-6">
-                <button type="button" className="mt-6 text-sm font-semibold leading-6 text-gray-900">
+              <div className="mt-6 flex flex-col items-center justify-end gap-x-6">
+              <div className="flex-row">
+                <button type="button" className="mt-6 mx-1 text-sm font-semibold leading-6 text-gray-900">
                   Cancel
                 </button>
+
                 <button
                   className="mt-6 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !isVerified}
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
+                </div>
+                <ReCaptcha
+                  className="mt-6"  
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA!}
+                  onChange={handleCaptchaSubmission}
+                />
               </div>
       </form>
     </div>
