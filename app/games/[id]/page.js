@@ -5,6 +5,7 @@ import Player from "./player";
 import Sponsor from "../../../components/sponsors_bottom";
 import { getTeamsById } from "../../../lib/prisma/read/teams";
 import Matches from "./matches";
+import Staff from "./staff";
 
 export default async function playerPage({params}) {
     // get the team from api by id
@@ -27,6 +28,7 @@ export default async function playerPage({params}) {
         </div>}</div>
         {/* sends the team prop to both player and matches components */}
         <Player team = {team}/>
+        <Staff team = {team}></Staff>
         <Matches team = {team}></Matches>
         <Sponsor />
         </FadeIn>

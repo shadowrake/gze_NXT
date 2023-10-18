@@ -56,9 +56,10 @@ model news {
 }
 
 model players {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
   keyword String
   name    String
+  team    String?
 }
 
 model staffRec {
