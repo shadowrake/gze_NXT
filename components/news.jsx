@@ -47,9 +47,11 @@ import {getNewsReverseLimitTen} from '../lib/prisma/read/news.js'
               </article>
             ))}
           </div>
+          {news.length >= 9 ? 
           <a href='/news/archive' className='text-black'>
-          <p className='mt-16 bg-green-200 text-center relative inline-flex items-center justify-center rounded-md p-2 text-lg font-bold hover:bg-green-300 hover:text-black-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>News archive</p>
+          <p className='mt-16 bg-green-200 text-center relative inline-flex items-center justify-center rounded-md p-2 text-lg font-bold hover:bg-green-300 hover:text-black-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>All news posts</p>
           </a>
+            : null}
         </div>
       </div>
     )
