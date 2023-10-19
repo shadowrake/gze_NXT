@@ -1,15 +1,25 @@
-import { getMatches } from "../../../lib/prisma/read/matches.js"
+import NavBar from "@components/nav.js"
+import { getMatches } from "@lib/prisma/read/matches.js"
+import { getTeamsById } from "@lib/prisma/read/teams"
+import Footer from "@components/footer.js"
+import { FadeIn } from "@components/FadeIn.jsx"
+import Spons from "@components/sponsors_bottom.jsx"
 
-export default async function Player({team}) {
+export default async function Player({params}) {
+
+    const { team } = await getTeamsById(params.id)
     // Fetch data from external API
     const {matches} = await getMatches()
 
     // Fliter data from external API to match today's date and team with the right keyword defined in the database
-    const match = matches.filter((player) => player.date >= Date.now() && team.name === player.keyword)
+    const match = matches.filter((player) => team.name === player.keyword)
 
     return (
+        <main className="bg-white">
+        <NavBar />
+        <FadeIn>
       <div className="bg-white">
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6  lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl font-bold text-gray-900">Matches</h2>
         <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
           {match.map((match) => (
@@ -30,20 +40,11 @@ export default async function Player({team}) {
             </div>
           ))}
         </div>
-        <div className="mt-8 md:flex md:items-center md:justify-between">
-          <a href={`/games/${team.id}/matches/archive`} className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">
-            See all matches
-            <span aria-hidden="true"> &rarr;</span>
-          </a>
-        </div>
-        <div className="mt-8 text-sm md:hidden">
-          <a href={`/games/${team.id}/matches/archive`} className="font-medium text-indigo-600 hover:text-indigo-500">
-            See all matches
-            <span aria-hidden="true"> &rarr;</span>
-          </a>
-        </div>
       </div>
     </div>
+    <Spons  />
+    </FadeIn>
+    <Footer />
+    </main>
     )
   }
-  

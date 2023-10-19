@@ -3,6 +3,7 @@ import { getEventsById } from '../../../lib/prisma/read/events.js'
 import NavBar from '../../../components/nav'
 import Footer from '../../../components/footer'
 import {FadeIn} from '../../../components/FadeIn'
+import Spons from '@components/sponsors_bottom.jsx'
 
 
 export default async function event({params}) {
@@ -40,6 +41,7 @@ export default async function event({params}) {
         </figure>
       </div>
     </div>
+    <Spons  />
     </FadeIn>
     <Footer />
   </main>
