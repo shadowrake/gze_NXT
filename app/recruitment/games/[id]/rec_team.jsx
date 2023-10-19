@@ -19,7 +19,7 @@ export default async function rec_team({teamSoon}) {
             {teamSoon.desc}
           </p>
           {/* passes down the filtered input to contact.tsx */}
-          <Contact input = {input}></Contact>
+          <Contact input = {input} teamSoon={teamSoon}></Contact>
         </div>
         <div className="">
           <h3 className="text-2xl font-semibold leading-7 text-gray-900">Alternative way to signup</h3>

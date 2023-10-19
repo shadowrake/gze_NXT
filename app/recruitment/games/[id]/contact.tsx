@@ -22,13 +22,15 @@ type Input = {
   email: string;
   gamerTag: string;
   input: { name: string; id: React.Key; dummy: string}[];
+  teamSoon: {title: string};
+  title: string;
   message: string;
 };
 
 
 
 
-export default function Contact({ input }: Input)  {
+export default function Contact({ input, teamSoon }: Input)  {
     const [data, setData] = useState<Input>();
     const recaptchaRef = React.useRef<ReCaptcha>(null);
     const [isVerified, setIsverified] = useState<boolean>(false);
@@ -47,6 +49,7 @@ export default function Contact({ input }: Input)  {
         email: "",
         gamerTag: "",
         input: input,
+        title: "",
       },
     });
 
@@ -84,6 +87,16 @@ export default function Contact({ input }: Input)  {
           >
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <div className="sm:col-span-4">
+          <input 
+                    type="hidden"
+                    id="username"
+                    autoComplete="username"
+                    value={teamSoon.title}
+                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    {...register("title", {required: "You need a vaild email"})} />
+                    {errors.title?.message && (
+                    <p className="text-sm text-red-400">{errors.title.message}</p>
+                  )}
           <label htmlFor="username" className="mt-2 block text-sm font-medium leading-6 text-gray-900">
             Email
           </label>

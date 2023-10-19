@@ -4,12 +4,12 @@ import {z} from 'zod';
 export const FormDataSchemas = z.object({
     name: z.string().nonempty("Please enter your First name").min(2, "Please enter a valid First name"),
     surname: z.string().nonempty("Please enter your Last name").min(2, "Please enter a valid Last name"),
-    age: z.string().nonempty("Please enter your age"),
+    age: z.string().nonempty("Please enter your age").max(2, "Please enter a valid age"),
     gamerTag: z.string(),
     email: z.string().email("Please enter a valid email"),
-    role: z.string(),
+    role: z.string().nonempty("Please enter your role"),
     joinTeam: z.string().nonempty("Please enter your reason for wanting to join the team").min(10, "Please enter a valid reason for wanting to join the team"),
-    qualities: z.string().nonempty("Please enter your qualities").min(10, "Please enter a valid qualities"),
+    qualities: z.string().nonempty("Please enter your qualities").min(10, "Please enter valid qualities"),
     teamManager: z.string(),
     anythingElse: z.string(),
 });

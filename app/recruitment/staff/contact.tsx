@@ -47,6 +47,7 @@ export default function Contact()  {
         console.log({data: result.data});
         toast.success("Email sent");
         reset();
+        window.location.href = "/recruitment";
         return;
       }
 
@@ -84,10 +85,10 @@ export default function Contact()  {
                     autoComplete="name"
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="First name"
-                    {...register("name", {required: "You need a vaild email"})} />
+                    {...register("name")} />
           </div>
-          {errors.email?.message && (
-                    <p className="text-sm text-red-400">{errors.email.message}</p>
+          {errors.name?.message && (
+                    <p className="text-sm text-red-400">{errors.name.message}</p>
                   )}
           </div>
 
@@ -103,10 +104,10 @@ export default function Contact()  {
                     autoComplete="surname"
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="Last name"
-                    {...register("surname", {required: "You need a vaild email"})} />
+                    {...register("surname")} />
           </div>
-          {errors.email?.message && (
-                    <p className="text-sm text-red-400">{errors.email.message}</p>
+          {errors.surname?.message && (
+                    <p className="text-sm text-red-400">{errors.surname.message}</p>
                   )}
           </div>
 
@@ -122,10 +123,10 @@ export default function Contact()  {
                     autoComplete="Age"
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="Age"
-                    {...register("age", {required: "You need a vaild email"})} />
+                    {...register("age")} />
           </div>
-          {errors.email?.message && (
-                    <p className="text-sm text-red-400">{errors.email.message}</p>
+          {errors.age?.message && (
+                    <p className="text-sm text-red-400">{errors.age.message}</p>
                   )}
           </div>
 
@@ -141,7 +142,7 @@ export default function Contact()  {
                     autoComplete="Email"
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="Email"
-                    {...register("email", {required: "You need a vaild email"})} />
+                    {...register("email")} />
           </div>
           {errors.email?.message && (
                     <p className="text-sm text-red-400">{errors.email.message}</p>
@@ -180,6 +181,9 @@ export default function Contact()  {
                 <option>TBA</option>
             </select>
             </div>
+            {errors.role?.message && (
+                    <p className="text-sm text-red-400">{errors.role.message}</p>
+                  )}
 
 
             <div className="mt-2">
@@ -203,7 +207,9 @@ export default function Contact()  {
                 <option>Fortnite</option>
             </select>
             </div>
-
+            {errors.teamManager?.message && (
+                    <p className="text-sm text-red-400">{errors.teamManager.message}</p>
+                  )}
 
             <label htmlFor="joinTeam" className="mt-2 block text-sm font-medium leading-6 text-gray-900">
                 Why would you like to join our team?
@@ -218,7 +224,9 @@ export default function Contact()  {
                 {...register("joinTeam")}
                 />
             </div>
-
+            {errors.joinTeam?.message && (
+                    <p className="text-sm text-red-400">{errors.joinTeam.message}</p>
+                  )}
 
             <label htmlFor="qualities" className="mt-2 block text-sm font-medium leading-6 text-gray-900">
                 What qualities do you have that would make you a good fit for our team?
@@ -233,7 +241,9 @@ export default function Contact()  {
                 {...register("qualities")}
                 />
             </div>
-
+                {errors.qualities?.message && (
+                    <p className="text-sm text-red-400">{errors.qualities.message}</p>
+                  )}
 
             <label htmlFor="anythingElse" className="mt-2 block text-sm font-medium leading-6 text-gray-900">
                 Anything else you would like to add?

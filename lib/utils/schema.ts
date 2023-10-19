@@ -8,5 +8,6 @@ export const FormDataSchema = z.object({
         name: z.string().nonempty("Please enter your awnser here"),
         id: z.string().nonempty("Please enter your awnser here"),
         dummy: z.string().nonempty("Please enter your awnser here")
-    }))
+    })),
+    title: z.string().nonempty("Please enter your awnser here")
 });
