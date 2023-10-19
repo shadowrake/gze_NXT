@@ -1,7 +1,7 @@
 import NavBar from '../../../components/nav'
 import Footer from '../../../components/footer'
 import { FadeIn } from '../../../components/FadeIn'
-import Events from '../../../components/events_main'
+import Events from '../../../components/events_arc'
 
 import Sponsor from '../../../components/sponsors_bottom'
 

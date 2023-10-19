@@ -7,7 +7,6 @@ import { getEvents } from '../lib/prisma/read/events.js'
     const { event } = await getEvents()
 
     // Fliter data from external API to match today's date
-    const events = event.filter((events) => events.datetime >= Date.now())
     return (
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -17,11 +16,9 @@ import { getEvents } from '../lib/prisma/read/events.js'
               Event and tournments by GZE.
             </p>
           </div>
-          {event.dateTime >= Date.now() ? 
           <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            
             {/* maps data from api */}
-            {events.map((post) => (
+            {event.map((post) => (
               <article
                 key={post.id}
                 className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
@@ -52,22 +49,8 @@ import { getEvents } from '../lib/prisma/read/events.js'
                   </a>
                 </h3>
               </article>))}
-              
-          </div>
-          : <div><h3 className='text-gray-900 text-lg font-bold text-center'>No upcoming events/ongoing events</h3>
-          <div className="mt-4 md:flex md:items-center md:justify-center">
-          <a href={`/events/archive`} className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">
-            See previous events
-            <span aria-hidden="true"> &rarr;</span>
-          </a>
-        </div><div className="mt-4 text-sm md:hidden text-center">
-          <a href={`/events/archive`} className="font-medium text-indigo-600 hover:text-indigo-500">
-            See previous events
-            <span aria-hidden="true"> &rarr;</span>
-          </a>
-        </div></div>}
         </div>
       </div>
+    </div>
     )
   }
-  
