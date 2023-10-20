@@ -17,7 +17,7 @@ export default async function event({params}) {
     <div className="bg-white px-6 py-32 lg:px-8">
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
       <div className="flex gap-x-2.5">
-        <img src="https://hermankristiansen.no/greenzone_logo2.1.png" alt="" className="h-6 w-6 flex-none rounded-full bg-white/10" />
+        <img src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/8f82cc2d-9c49-45e4-4106-8b24a8e47b00/public" alt="" className="h-6 w-6 flex-none rounded-full bg-white/10" />
         GZE staff
       </div>
       <div className="flex gap-x-2.5">

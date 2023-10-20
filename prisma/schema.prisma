@@ -7,6 +7,23 @@ datasource db {
   url      = env("MONGODB_URI_Read")
 }
 
+type CcGames {
+  game1 String
+  game2 String
+  game3 String
+}
+
+type CcGear {
+  name String
+}
+
+type CcLinks {
+  instagram String
+  twitch    String
+  twitter   String
+  youtube   String
+}
+
 type NewsAuthor {
   imgUrl String
   name   String
@@ -18,6 +35,23 @@ model Staff {
   img         String
   name        String
   nationality String
+  role        String
+}
+
+model cc {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  Nationality String
+  age         String
+  desc        String
+  firstname   String
+  gamertag    String
+  games       CcGames
+  gear        CcGear
+  img         String
+  imgAlt      String
+  keyword     String
+  lastname    String
+  links       CcLinks
   role        String
 }
 
@@ -76,6 +110,14 @@ model teamStaff {
   name        String
   nationality String
   role        String
+}
+
+model team_achievements {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  date    DateTime @db.Date
+  img     String
+  keyword String
+  name    String
 }
 
 model teams {

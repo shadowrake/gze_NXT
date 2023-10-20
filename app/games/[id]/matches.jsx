@@ -17,7 +17,7 @@ export default async function Player({team}) {
               <div className="relative">
                 <div className="relative h-72 w-full overflow-hidden rounded-lg">
                   <img
-                    src={match.imgUrl ? match.imgUrl : "https://hermankristiansen.no/banner_gze_4k.png"}
+                    src={match.imgUrl ? match.imgUrl : "https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/d382efb8-c8ca-4bdc-6d8b-5da23559e500/public"}
                     alt={match.imageAlt}
                     className="h-full w-full object-cover object-center"
                   />

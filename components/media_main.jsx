@@ -6,7 +6,7 @@ export default async function main_media() {
         <div className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-6 lg:gap-8">
           <div className="group aspect-h-1 aspect-w-2 overflow-hidden rounded-lg sm:aspect-h-1 sm:aspect-w-1 sm:row-span-2">
             <img
-              src="https://hermankristiansen.no/media1.png"
+              src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/1f9f68ef-5c29-4ac5-ec32-76668259dd00/public"
               alt="Two models wearing women's black cotton crewneck tee and off-white cotton crewneck tee."
               className="object-cover object-center group-hover:opacity-75"
             />
@@ -23,7 +23,7 @@ export default async function main_media() {
           </div>
           <div className="group aspect-h-1 aspect-w-2 overflow-hidden rounded-lg sm:aspect-none sm:relative sm:h-full">
             <img
-              src="https://hermankristiansen.no/media2.png"
+              src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/4159748d-5a90-4aa2-0207-6c311e2cd500/public"
               alt="Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters."
               className="object-cover object-center group-hover:opacity-75 sm:absolute sm:inset-0 sm:h-full sm:w-full"
             />
@@ -43,7 +43,7 @@ export default async function main_media() {
           </div>
           <div className="group aspect-h-1 aspect-w-2 overflow-hidden rounded-lg sm:aspect-none sm:relative sm:h-full">
             <img
-              src="https://hermankristiansen.no/media3.png"
+              src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/1e7a7bf7-79a6-4b15-b671-34b3a6b9c900/public"
               alt="Walnut desk organizer set with white modular trays, next to porcelain mug on wooden desk."
               className="object-cover object-center group-hover:opacity-75 sm:absolute sm:inset-0 sm:h-full sm:w-full"
             />

@@ -24,7 +24,7 @@ export default async function Player({team}) {
           {/* maps data from api */}
           {player.map((person) => (
             <li key={person.name}>
-              <img className="aspect-[3/2] w-3/4 rounded-2xl object-cover" src={person.imgUrl ? person.imgUrl : "https://hermankristiansen.no/person_not_founhd.png"} alt="" />
+              <img className="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src={person.imgUrl ? person.imgUrl : "https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/5fceade2-4fde-4115-a07a-0a2089daab00/public"} alt="" />
               <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">{person.name}</h3>
               <p className="text-base leading-7 text-gray-600">{person.role}</p>
               <p className="text-base leading-7 text-gray-600">{person.team}</p>

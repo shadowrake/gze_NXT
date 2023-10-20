@@ -17,7 +17,7 @@ import { getEvents } from '../lib/prisma/read/events.js'
               Event and tournments by GZE.
             </p>
           </div>
-          {event.dateTime >= Date.now() ? 
+          {Object.keys(events).length != 0 ? 
           <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             
             {/* maps data from api */}

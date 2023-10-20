@@ -42,7 +42,7 @@ export default async function About() {
         >
           {staff.map((person) => (
             <li key={person.id} className="rounded-2xl bg-gray-800 px-8 py-10">
-              <img className="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src="https://hermankristiansen.no/person_not_founhd.png" alt="" />
+              <img className="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/5fceade2-4fde-4115-a07a-0a2089daab00/public" alt="" />
               <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">{person.name}</h3>
               <p className="text-sm leading-6 text-gray-400">{person.role}</p>
               <p className="text-sm leading-6 text-gray-400">{person.nationality}</p>
