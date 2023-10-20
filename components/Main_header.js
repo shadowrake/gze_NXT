@@ -8,7 +8,7 @@ export default function main_header() {
     <div className="">
       {<div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-40 lg:px-8">
     <img
-      src="https://hermankristiansen.no/test2.png"
+      src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/eca38c1a-248c-45dc-bd32-579e253e5701/public?sig=acffb910b4c91194e2f119a9c43912ec926a79a78a469c01eb1a0e47cb9e3eae"
       alt=""
       className="absolute inset-0 -z-10 h-full w-full object-cover"
     />
