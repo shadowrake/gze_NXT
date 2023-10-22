@@ -3,7 +3,7 @@ import Media from '../../../components/media_pics.jsx'
 import { FadeIn } from '../../../components/FadeIn.jsx'
 import Footer from '../../../components/footer.js'
 import { getMedia } from '../../../lib/prisma/read/media.js'
-import Spons from '../../../components/sponsors_bottom.jsx'
+import Spons from '../../../components/sponsors_top.jsx'
 
 export default async function main_media() {
     const {media} = await getMedia()
@@ -12,8 +12,8 @@ export default async function main_media() {
             <NavBar></NavBar>
             {/* creates an fadein effect on the page */}
             <FadeIn>
-            <Media media = {media}></Media>
             <Spons></Spons>
+            <Media media = {media}></Media>
             </FadeIn>
             <Footer></Footer>
         </main>

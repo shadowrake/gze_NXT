@@ -34,7 +34,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "app/layout.js"  ],
+, "app/layout.js", "components/new_main_header.jsx"  ],
   "exclude": [
     "node_modules"
   ]

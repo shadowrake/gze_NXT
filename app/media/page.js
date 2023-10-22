@@ -2,7 +2,7 @@ import NavBar from '../../components/nav.js'
 import { FadeIn } from '../../components/FadeIn.jsx'
 import Footer from '../../components/footer.js'
 import Media from '../../components/media_main.jsx'
-import Spons from '../../components/sponsors_bottom.jsx'
+import Spons from '../../components/sponsors_top.jsx'
 
 export default async function main_media() {
     return (
@@ -10,8 +10,8 @@ export default async function main_media() {
             <NavBar></NavBar>
             {/* creates an fadein effect on the page */}
             <FadeIn>
-            <Media></Media>
             <Spons></Spons>
+            <Media></Media>
             </FadeIn>
             <Footer></Footer>
         </main>

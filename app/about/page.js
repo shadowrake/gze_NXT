@@ -2,7 +2,7 @@ import { FadeIn } from '../../components/FadeIn'
 import Footer from '../../components/footer'
 import NavBar from '../../components/nav'
 import {getStaff} from '../../lib/prisma/read/staff.js'
-import Sponsor from '../../components/sponsors_bottom'
+import Sponsor from '../../components/sponsors_top'
 
 export default async function About() {
     // get the staff from the database

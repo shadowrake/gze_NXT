@@ -3,7 +3,7 @@ import { getEventsById } from '../../../lib/prisma/read/events.js'
 import NavBar from '../../../components/nav'
 import Footer from '../../../components/footer'
 import {FadeIn} from '../../../components/FadeIn'
-import Spons from '@components/sponsors_bottom.jsx'
+import Spons from '@components/sponsors_top.jsx'
 
 
 export default async function event({params}) {
@@ -14,6 +14,7 @@ export default async function event({params}) {
     <NavBar />
     {/* creates an fadein effect on the page */}
     <FadeIn>
+    <Spons  />
     <div className="bg-white px-6 py-32 lg:px-8">
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
       <div className="flex gap-x-2.5">
@@ -41,7 +42,7 @@ export default async function event({params}) {
         </figure>
       </div>
     </div>
-    <Spons  />
+    
     </FadeIn>
     <Footer />
   </main>

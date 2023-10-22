@@ -2,7 +2,7 @@ import NavBar from '@components/nav.js'
 import {getCCById} from '../../../../lib/prisma/read/cc.js'
 import CCProfile from './cc_profile.jsx'
 import Footer from '@components/footer.js'
-import Spons from '@components/sponsors_bottom.jsx'
+import Spons from '@components/sponsors_top.jsx'
 import { FadeIn } from '@components/FadeIn.jsx'
 
 export default async function cc_profile({params}) {
@@ -11,8 +11,9 @@ export default async function cc_profile({params}) {
         <main className='bg-white'>
             <NavBar></NavBar>
             <FadeIn>
-            <CCProfile cc={cc}></CCProfile>
             <Spons></Spons>
+            <CCProfile cc={cc}></CCProfile>
+            
             </FadeIn>
             <Footer></Footer>
         </main>

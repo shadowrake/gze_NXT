@@ -2,7 +2,7 @@ import { FadeIn } from "../../../components/FadeIn";
 import Footer from "../../../components/footer";
 import NavBar from "../../../components/nav";
 import Player from "./player";
-import Sponsor from "../../../components/sponsors_bottom";
+import Sponsor from "../../../components/sponsors_top";
 import { getTeamsById } from "../../../lib/prisma/read/teams";
 import Matches from "./matches";
 import Staff from "./staff";
@@ -16,6 +16,7 @@ export default async function playerPage({params}) {
         <NavBar />
         {/* creates an fadein effect on the page */}
         <FadeIn>
+        <Sponsor />
         <div className="px-4 py-5 sm:p-6 bg-greenzone">{<div className=" justify-center sm:flex">
         <div className="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
         </div>
@@ -32,7 +33,7 @@ export default async function playerPage({params}) {
         <Staff team = {team}></Staff>
         <Matches team = {team}></Matches>
         <Achiv team = {team}></Achiv>
-        <Sponsor />
+        
         </FadeIn>
         <Footer />
     </main>

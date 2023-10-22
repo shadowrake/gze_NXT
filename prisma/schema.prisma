@@ -29,6 +29,11 @@ type NewsAuthor {
   name   String
 }
 
+type SlideshowHeaderSliderBtn {
+  aria      String
+  dataSlide String
+}
+
 model Staff {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
   age         String
@@ -94,6 +99,13 @@ model players {
   keyword String
   name    String
   team    String?
+}
+
+model slideshowHeader {
+  id        String                   @id @default(auto()) @map("_id") @db.ObjectId
+  img       String
+  imgAlt    String
+  sliderBtn SlideshowHeaderSliderBtn
 }
 
 model staffRec {
