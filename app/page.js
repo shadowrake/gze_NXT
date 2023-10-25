@@ -20,7 +20,6 @@ export default async function Home() {
       <Team></Team>
       <News></News>
       <Events></Events>
-      
       </FadeIn>
       <Footer></Footer>
     </main>

@@ -8,8 +8,13 @@ import { Carousel } from "@material-tailwind/react";
 export default async function events_main({slide}) {
 
     return (
+      
       <Carousel
       className=""
+      nextArrow={false}
+      prevArrow={false}
+      autoplay={true}
+      loop={true}
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
           {new Array(length).fill("").map((_, i) => (
@@ -25,12 +30,13 @@ export default async function events_main({slide}) {
       )}
     >
       {slide.map((item) => (
-
-        <img key={item.id}
+        <a key={item.id} href='#'>
+        <img 
         src={item.img}
         alt={item.imgAlt}
         className="h-full w-full object-cover">
         </img>
+        </a>
         ))}
     </Carousel>
     )
