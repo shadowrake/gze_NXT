@@ -103,6 +103,7 @@ model players {
 
 model slideshowHeader {
   id        String                   @id @default(auto()) @map("_id") @db.ObjectId
+  href      String
   img       String
   imgAlt    String
   sliderBtn SlideshowHeaderSliderBtn
@@ -159,4 +160,8 @@ model teamsinput {
   dummy   String?
   keyword String
   name    String
+}
+
+model users {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
 }

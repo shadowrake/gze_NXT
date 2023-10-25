@@ -30,7 +30,7 @@ export default async function events_main({slide}) {
       )}
     >
       {slide.map((item) => (
-        <a key={item.id} href='#'>
+        <a key={item.id} href={item.href}>
         <img 
         src={item.img}
         alt={item.imgAlt}
