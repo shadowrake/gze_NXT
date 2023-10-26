@@ -1,12 +1,17 @@
 import { CalendarDaysIcon,InformationCircleIcon } from '@heroicons/react/20/solid'
 import { getNewsById } from '../../../lib/prisma/read/news.js'
+import { getNews } from '../../../lib/prisma/read/news.js'
 import NavBar from '../../../components/nav'
 import Footer from '../../../components/footer'
 import {FadeIn} from '../../../components/FadeIn'
 import Sponsor from '@components/sponsors_top.jsx'
 
+export async function generateStaticParams() {
+  const {news} = await getNews();
+  return news.map(news => ({ id: news.id }));
+}
 
-export default async function News({params}) {
+export default async function news({params}) {
   // get the news from api by id
   const { news } = await getNewsById(params.id)
   return (

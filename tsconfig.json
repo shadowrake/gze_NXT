@@ -34,7 +34,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "app/layout.js", "components/new_main_header.jsx"  ],
+, "app/layout.js", "components/new_main_header.jsx", "app/events/[id]/page.ts"  ],
   "exclude": [
     "node_modules"
   ]

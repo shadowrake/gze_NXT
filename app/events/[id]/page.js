@@ -1,12 +1,17 @@
 import { CalendarDaysIcon,InformationCircleIcon } from '@heroicons/react/20/solid'
 import { getEventsById } from '../../../lib/prisma/read/events.js'
-import NavBar from '../../../components/nav'
-import Footer from '../../../components/footer'
-import {FadeIn} from '../../../components/FadeIn'
+import { getEvents } from '../../../lib/prisma/read/events.js'
+import NavBar from '../../../components/nav.js'
+import Footer from '../../../components/footer.js'
+import {FadeIn} from '../../../components/FadeIn.jsx'
 import Spons from '@components/sponsors_top.jsx'
 
+export async function generateStaticParams() {
+  const {event} = await getEvents();
+  return event.map(event => ({ id: event.id }));
+}
 
-export default async function event({params}) {
+export default async function event({ params }) {
   // Fetch necessary data for the blog post using params.id
   const { event } = await getEventsById(params.id)
   return (

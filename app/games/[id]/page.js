@@ -4,6 +4,7 @@ import NavBar from "../../../components/nav";
 import Player from "./player";
 import Sponsor from "../../../components/sponsors_top";
 import { getTeamsById } from "../../../lib/prisma/read/teams";
+import { getTeams } from "../../../lib/prisma/read/teams";
 import Matches from "./matches";
 import Staff from "./staff";
 import Achiv from "./achiv";
@@ -40,3 +41,7 @@ export default async function playerPage({params}) {
     )
   }
   
+  export async function generateStaticParams() {
+    const  {teams}  = await getTeams();
+    return teams.map(teams => ({ id: teams.id }));
+  }

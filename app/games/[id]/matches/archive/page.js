@@ -1,9 +1,15 @@
 import NavBar from "@components/nav.js"
 import { getMatches } from "@lib/prisma/read/matches.js"
 import { getTeamsById } from "@lib/prisma/read/teams"
+import { getTeams } from "@lib/prisma/read/teams"
 import Footer from "@components/footer.js"
 import { FadeIn } from "@components/FadeIn.jsx"
 import Spons from "@components/sponsors_bottom.jsx"
+
+export async function generateStaticParams() {
+  const { teams } = await getTeams();
+  return teams.map(teams => ({ id: teams.id }));
+}
 
 export default async function Player({params}) {
 

@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: "export",
     experimental: {
-        serverActions: true,
+        serverActions: false,
       },
     reactStrictMode: true,
     images: {

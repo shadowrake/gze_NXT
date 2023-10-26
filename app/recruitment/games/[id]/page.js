@@ -3,6 +3,10 @@ import { FadeIn } from '../../../../components/FadeIn.jsx'
 import Footer from '../../../../components/footer.js'
 import Teams from './rec_team.jsx'
 import { getTeamsSoonById } from '../../../../lib/prisma/read/teamsSoon.js'
+import { getTeamsSoon } from '../../../../lib/prisma/read/teamsSoon.js'
+
+
+
  
  export default async function recTeam({params}) {
     const { teamSoon } = await getTeamsSoonById(params.id)
@@ -18,4 +22,9 @@ import { getTeamsSoonById } from '../../../../lib/prisma/read/teamsSoon.js'
             <Footer></Footer>
         </main>
     )
+  }
+
+  export async function generateStaticParams() {
+    const {teamsSoon} = await getTeamsSoon();
+    return teamsSoon.map(teamsSoon => ({ id: teamsSoon.id }));
   }
