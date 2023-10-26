@@ -32,7 +32,7 @@ export default function NavBar() {
                 <div className="flex flex-shrink-0 items-center text-black text-lg font-bold ">
                   <img
                     className="h-8 w-auto"
-                    src="https://hermankristiansen.no/greenzone_logo2.1.png"
+                    src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/8f82cc2d-9c49-45e4-4106-8b24a8e47b00/public"
                     alt="Greenzone Esports logo"
                   />
                   GZ Esports

@@ -3,6 +3,7 @@ import { getNewsById } from '../../../lib/prisma/read/news.js'
 import NavBar from '../../../components/nav'
 import Footer from '../../../components/footer'
 import {FadeIn} from '../../../components/FadeIn'
+import Sponsor from '@components/sponsors_top.jsx'
 
 
 export default async function News({params}) {
@@ -13,6 +14,7 @@ export default async function News({params}) {
     <NavBar />
     {/* creates an fadein effect on the page */}
     <FadeIn>
+    <Sponsor></Sponsor>
     <div className="bg-white px-6 py-32 lg:px-8">
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
       <div className="flex gap-x-2.5">
@@ -21,7 +23,7 @@ export default async function News({params}) {
       </div>
       <div className="flex gap-x-2.5">
         <CalendarDaysIcon className="mt-0.5 h-5 w-5 flex-none text-gray-300" aria-hidden="true" />
-        {news.date}
+        {news.datetime.toDateString()}
       </div>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{news.title}</h1>
         <p className="mt-6 text-xl leading-8">

@@ -1,18 +1,37 @@
-// define the prisma client
- generator client {
+generator client {
   provider = "prisma-client-js"
 }
 
-//define the datasource
 datasource db {
   provider = "mongodb"
   url      = env("MONGODB_URI_Read")
 }
 
-// define the schema types and relations between them, all is fetched from the database
+type CcGames {
+  game1 String
+  game2 String
+  game3 String
+}
+
+type CcGear {
+  name String
+}
+
+type CcLinks {
+  instagram String
+  twitch    String
+  twitter   String
+  youtube   String
+}
+
 type NewsAuthor {
   imgUrl String
   name   String
+}
+
+type SlideshowHeaderSliderBtn {
+  aria      String
+  dataSlide String
 }
 
 model Staff {
@@ -24,10 +43,26 @@ model Staff {
   role        String
 }
 
+model cc {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  Nationality String
+  age         String
+  desc        String
+  firstname   String
+  gamertag    String
+  games       CcGames
+  gear        CcGear
+  img         String
+  imgAlt      String
+  keyword     String
+  lastname    String
+  links       CcLinks
+  role        String
+}
+
 model events {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  date     String
-  datetime String
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  datetime DateTime @db.Date
   desc     String
   imgAlt   String
   imgUrl   String
@@ -51,8 +86,7 @@ model media {
 model news {
   id       String     @id @default(auto()) @map("_id") @db.ObjectId
   author   NewsAuthor
-  date     String
-  datetime String
+  datetime DateTime   @db.Date
   desc     String
   imgAlt   String
   imgUrl   String
@@ -61,6 +95,21 @@ model news {
 }
 
 model players {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  keyword String
+  name    String
+  team    String?
+}
+
+model slideshowHeader {
+  id        String                   @id @default(auto()) @map("_id") @db.ObjectId
+  href      String
+  img       String
+  imgAlt    String
+  sliderBtn SlideshowHeaderSliderBtn
+}
+
+model staffRec {
   id      String @id @default(auto()) @map("_id") @db.ObjectId
   keyword String
   name    String
@@ -74,6 +123,14 @@ model teamStaff {
   name        String
   nationality String
   role        String
+}
+
+model team_achievements {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  date    DateTime @db.Date
+  img     String
+  keyword String
+  name    String
 }
 
 model teams {
@@ -92,6 +149,8 @@ model teamsSoon {
   href     String?
   imageAlt String
   imageSrc String
+  keyword  String
+  manager  String
   name     String
   title    String
 }
@@ -101,4 +160,8 @@ model teamsinput {
   dummy   String?
   keyword String
   name    String
+}
+
+model users {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
 }

@@ -8,7 +8,7 @@ export default function main_header() {
     <div className="">
       {<div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-40 lg:px-8">
     <img
-      src="https://hermankristiansen.no/test2.png"
+      src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/eca38c1a-248c-45dc-bd32-579e253e5701/public?sig=acffb910b4c91194e2f119a9c43912ec926a79a78a469c01eb1a0e47cb9e3eae"
       alt=""
       className="absolute inset-0 -z-10 h-full w-full object-cover"
     />
@@ -38,18 +38,6 @@ export default function main_header() {
     </div>
   </div>}
     </div>
-    <div className="px-4 py-5 sm:p-6 bg-greenzone">{<div className=" justify-center sm:flex">
-      <div className="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
-      </div>
-      <div className=''>
-      <div className="flex gap-x-2.5">
-        <img src="https://i.bo3.no/image/319645/gamer2020-square.png" alt="gamer.no logo" className="h-6 w-6 flex-none rounded-full bg-white/10" />
-        <a href="https://www.gamer.no/klubber/greenzone-esports/171493" className='justify-center font-bold text-black '><p className='inline-flex text-lg items-center border-b-2 border-transparent font-bold text-black-900 hover:border-green-900 hover:text-black-700'>Team Gamer.no page </p>
-        </a>
-        </div>
-        
-      </div>
-    </div>}</div>
       <Team></Team>
       <News></News>
       <Events></Events>

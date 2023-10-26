@@ -26,7 +26,7 @@ import {getNews} from '../lib/prisma/read/news.js'
   
                 <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
                   <time dateTime={post.datetime} className="mr-8">
-                    {post.date}
+                    {post.datetime.toDateString()}
                   </time>
                   <div className="-ml-4 flex items-center gap-x-4">
                     <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
@@ -47,6 +47,9 @@ import {getNews} from '../lib/prisma/read/news.js'
               </article>
             ))}
           </div>
+          <a href='/news' className='text-black'>
+                <p className='mt-16 bg-green-200 text-center relative inline-flex items-center justify-center rounded-md p-2 text-lg font-bold hover:bg-green-300 hover:text-black-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>Current news</p>
+          </a>
         </div>
       </div>
     )

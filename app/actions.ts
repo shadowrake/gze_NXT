@@ -2,6 +2,8 @@
 
 import { z } from "zod";
 
+import axios from "axios";
+
 import { Resend } from 'resend';
 
 import { FormDataSchema } from "../lib/utils/schema";
@@ -35,6 +37,7 @@ type ContactFormInputs = {
     email: string;
     gamerTag: string;
     input: { name: string; id: React.Key; dummy: string}[];
+    title: string;
   };
 
 //Defines the Resend API key
@@ -46,13 +49,14 @@ const result = FormDataSchema.safeParse(data);
 
 if(result.success) {
 //Destructures the data from the client side form
-const {input, email, gamerTag} = result.data;
+const {input, email, gamerTag, title} = result.data;
+console.log(title)
 try{
 //Sends the email to the email address specified in the "to" field
 const data = await resend.emails.send({
     from: 'Greenzone Esports Recruitment <recruitment@greenzoneesports.com>',
     to: ['recruitment@greenzoneesports.com'],
-    subject: 'New recruitment application',
+    subject: `New ${title} recruitment application`,
     text: `Input: ${input}\nEmail: ${email}\nGamer tag: ${gamerTag}`,
     react: ContactForm({input, email, gamerTag})
 })
@@ -82,7 +86,7 @@ export async function sendEmailS(data: Inputs) {
   const data = await resend.emails.send({
       from: 'Greenzone Esports Recruitment <recruitment@greenzoneesports.com>',
       to: ['recruitment@greenzoneesports.com'],
-      subject: 'New recruitment application',
+      subject: `New ${role} ${teamManager} application`,
       text: `Name: ${name}\n Surname: ${surname}\n age: ${age}\nEmail: ${email}\nGamer tag: ${gamerTag}\nRole: ${role}\nJoin team: ${joinTeam}\nQualities: ${qualities}\nTeam manager: ${teamManager}\nAnything else: ${anythingElse}`,
       react: ContactFormS({name, surname, age, email, gamerTag, role, joinTeam, qualities, teamManager, anythingElse})
   })
@@ -96,4 +100,15 @@ export async function sendEmailS(data: Inputs) {
   if(result.error) {
   return {success: false, error: result.error.format()};
   }
+  }
+
+  export async function verifyCaptcha(token: string | null) {
+    const res = await axios.post(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${token}`
+    )
+    if (res.data.success) {
+      return "success!"
+    } else {
+      throw new Error("Failed Captcha")
+    }
   }

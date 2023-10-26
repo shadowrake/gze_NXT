@@ -18,7 +18,7 @@ export default function howTo() {
           <figure className="mt-16">
           <img
             className="aspect-video rounded-xl bg-gray-50 object-cover"
-            src="https://hermankristiansen.no/screen1.png"
+            src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/2117ae5a-84c9-47b1-45ab-6115dfda1100/public"
             alt="Screenshot from discord, which shows the rules channel"
           />
           <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
@@ -33,7 +33,7 @@ export default function howTo() {
           <figure className="mt-16">
           <img
             className="aspect-video rounded-xl bg-gray-50 object-cover"
-            src="https://hermankristiansen.no/screen2.png"
+            src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/ebbf5344-fad5-407e-23e8-46030fd18000/public"
             alt="Screenshot from discord which shows the rules channel with the confirm button"
           />
           <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
@@ -48,7 +48,7 @@ export default function howTo() {
           <figure className="mt-16">
           <img
             className="aspect-video rounded-xl bg-gray-50 object-cover"
-            src="https://hermankristiansen.no/screen3.png"
+            src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/4baed008-e447-4af7-7d20-337ebd9a5200/public"
             alt="Screenshot from discord which shows the recruitment channel"
           />
           <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
@@ -63,7 +63,7 @@ export default function howTo() {
           <figure className="mt-16">
           <img
             className="aspect-video rounded-xl bg-gray-50 object-cover"
-            src="https://hermankristiansen.no/screen4.png"
+            src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/27d4fcaa-7c1c-4715-70b3-83c79a48e400/public"
             alt="Screenshot from discord which shows the recruitment channel with the game buttons"
           />
           <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">

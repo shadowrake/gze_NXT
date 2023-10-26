@@ -1,9 +1,9 @@
 import NavBar from '../../components/nav'
 import Footer from '../../components/footer'
 import { FadeIn } from '../../components/FadeIn'
-import Events from '../../components/events_main'
+import Events from '../../components/events'
 
-import Sponsor from '../../components/sponsors_bottom'
+import Sponsor from '../../components/sponsors_top'
 
 export default async function About() {
   return (
@@ -11,8 +11,8 @@ export default async function About() {
       <NavBar />
       {/* creates an fadein effect on the page */}
       <FadeIn>
-      <Events></Events>
       <Sponsor></Sponsor>
+      <Events></Events>
       </FadeIn>
       <Footer />
     </main>
