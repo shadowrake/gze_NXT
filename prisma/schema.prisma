@@ -29,15 +29,38 @@ type NewsAuthor {
   name   String
 }
 
+type PlayersLinks {
+  instagram String
+  twitch    String
+  twitter   String
+  youtube   String
+}
+
 type SlideshowHeaderSliderBtn {
   aria      String
   dataSlide String
 }
 
+type StaffLinks {
+  instagram String
+  linkedin  String
+  twitch    String
+  twitter   String
+  youtube   String
+}
+
+type TeamStaffLinks {
+  instagram String
+  twitch    String
+  twitter   String
+  youtube   String
+}
+
 model Staff {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
   age         String
   img         String
+  links       StaffLinks?
   name        String
   nationality String
   role        String
@@ -97,10 +120,14 @@ model news {
 }
 
 model players {
-  id      String  @id @default(auto()) @map("_id") @db.ObjectId
-  keyword String
-  name    String
-  team    String?
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  age         String
+  keyword     String
+  links       PlayersLinks
+  name        String
+  nationality String
+  role        String
+  team        String
 }
 
 model slideshowHeader {
@@ -118,10 +145,11 @@ model staffRec {
 }
 
 model teamStaff {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String         @id @default(auto()) @map("_id") @db.ObjectId
   age         String
   img         String
   keyword     String
+  links       TeamStaffLinks
   name        String
   nationality String
   role        String
@@ -166,4 +194,11 @@ model teamsinput {
 
 model users {
   id String @id @default(auto()) @map("_id") @db.ObjectId
+}
+
+model videoMedia {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  published String
+  title     String
+  url       String
 }

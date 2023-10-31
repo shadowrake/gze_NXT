@@ -6,7 +6,6 @@ import Events from './events_main'
 import { Carousel } from "@material-tailwind/react";
 
 export default async function events_main({slide, news}) {
-    console.log(news)
     return (
       
       <Carousel
@@ -34,7 +33,7 @@ export default async function events_main({slide, news}) {
         <img 
         src={item.img}
         alt={item.imgAlt}
-        className="h-full w-full object-cover">
+        className="md:h-full h-52 w-full object-cover">
         </img>
         </a>
         ))}
