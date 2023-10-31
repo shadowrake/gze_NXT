@@ -20,10 +20,10 @@ export default async function rec_team() {
           <Contact staff = {staff}></Contact>
         </div>
         <div>
-          <h3 className="text-2xl font-semibold leading-7 text-gray-900">Alternative way to signup</h3>
+          <h3 className="text-xl md:text-2xl font-semibold leading-7 text-gray-900">Alternative way to signup</h3>
           <div>
           <div className="mt-2 space-y-4">
-            <p className="mt-4 text-black text-center relative inline-flex items-center justify-center rounded-md text-xl font-bold focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <p className="mt-4 text-black text-center relative inline-flex items-center justify-center rounded-md text-lg md:text-xl font-bold focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               Contact our CEO on discord or email: lazyboy | lasse.eriksen@greenzoneesports.com
             </p>
           </div>
