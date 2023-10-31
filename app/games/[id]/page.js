@@ -41,7 +41,4 @@ export default async function playerPage({params}) {
     )
   }
   
-  export async function generateStaticParams() {
-    const  {teams}  = await getTeams();
-    return teams.map(teams => ({ id: teams.id }));
-  }
+

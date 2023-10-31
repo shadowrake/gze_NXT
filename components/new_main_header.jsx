@@ -5,8 +5,8 @@ import Spons from './sponsors_bottom'
 import Events from './events_main'
 import { Carousel } from "@material-tailwind/react";
 
-export default async function events_main({slide}) {
-
+export default async function events_main({slide, news}) {
+    console.log(news)
     return (
       
       <Carousel

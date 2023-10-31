@@ -61,13 +61,14 @@ model cc {
 }
 
 model events {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  datetime DateTime @db.Date
-  desc     String
-  imgAlt   String
-  imgUrl   String
-  keyword  String
-  title    String
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  desc      String
+  endDate   DateTime @db.Date
+  imgAlt    String
+  imgUrl    String
+  keyword   String
+  startDate DateTime @db.Date
+  title     String
 }
 
 model matches {
@@ -84,14 +85,15 @@ model media {
 }
 
 model news {
-  id       String     @id @default(auto()) @map("_id") @db.ObjectId
-  author   NewsAuthor
-  datetime DateTime   @db.Date
-  desc     String
-  imgAlt   String
-  imgUrl   String
-  keyword  String
-  title    String
+  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  author     NewsAuthor
+  datetime   DateTime   @db.Date
+  desc       String
+  imgAlt     String
+  imgUrl     String
+  keyword    String
+  title      String
+  updateDate DateTime   @db.Date
 }
 
 model players {

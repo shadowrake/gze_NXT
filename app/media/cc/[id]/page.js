@@ -6,10 +6,6 @@ import Footer from '@components/footer.js'
 import Spons from '@components/sponsors_top.jsx'
 import { FadeIn } from '@components/FadeIn.jsx'
 
-export async function generateStaticParams() {
-    const {cc} = await getCC();
-    return cc.map(cc => ({ id: cc.id }));
-  }
 
 export default async function cc({params}) {
     const { cc } = await getCCById(params.id)

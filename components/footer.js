@@ -131,7 +131,7 @@ const navigation = {
               </div>
             ))}
           </nav>
-          <div className="mt-10 flex justify-center space-x-10">
+          <div className="mt-10 flex flex-wrap justify-center gap-x-10 gap-y-5">
             {navigation.social.map((item) => (
               <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">{item.name}</span>

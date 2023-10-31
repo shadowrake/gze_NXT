@@ -7,7 +7,7 @@ import { getEvents } from '../lib/prisma/read/events.js'
     // Fetch data from external API
     const { event } = await getEvents()
 
-    const events = event.filter((events) => events.datetime >= Date.now())
+    const events = event.filter((events) => events.endDate >= Date.now())
     return (
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -32,9 +32,12 @@ import { getEvents } from '../lib/prisma/read/events.js'
                   <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
     
                   <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                    <time dateTime={post.datetime} className="mr-8">
-                      {post.datetime.toDateString()}
-                    </time>
+                  <time dateTime={post.startDate} className="mr-8 font-semibold outline-1 font-outline">
+                    Starts: {post.startDate.toDateString()}
+                  </time>
+                  <time dateTime={post.endDate} className="mr-8 font-semibold outline-1 font-outline">
+                    Ends: {post.endDate.toDateString()}
+                  </time>
                     <div className="-ml-4 flex items-center gap-x-4">
                       <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
                         <circle cx={1} cy={1} r={1} />
@@ -64,7 +67,8 @@ import { getEvents } from '../lib/prisma/read/events.js'
                   See previous events
                   <span aria-hidden="true"> &rarr;</span>
                 </a>
-              </div><div className="mt-4 text-sm md:hidden text-center">
+              </div>
+              <div className="mt-4 text-sm md:hidden text-center">
                 <a href={`/events/archive`} className="font-medium text-indigo-600 hover:text-indigo-500">
                   See previous events
                   <span aria-hidden="true"> &rarr;</span>

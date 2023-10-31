@@ -1,4 +1,4 @@
-import { CalendarDaysIcon,InformationCircleIcon } from '@heroicons/react/20/solid'
+import { CalendarDaysIcon,InformationCircleIcon, ClockIcon } from '@heroicons/react/20/solid'
 import { getNewsById } from '../../../lib/prisma/read/news.js'
 import { getNews } from '../../../lib/prisma/read/news.js'
 import NavBar from '../../../components/nav'
@@ -6,10 +6,6 @@ import Footer from '../../../components/footer'
 import {FadeIn} from '../../../components/FadeIn'
 import Sponsor from '@components/sponsors_top.jsx'
 
-export async function generateStaticParams() {
-  const {news} = await getNews();
-  return news.map(news => ({ id: news.id }));
-}
 
 export default async function news({params}) {
   // get the news from api by id
@@ -26,10 +22,19 @@ export default async function news({params}) {
         <img src={news.author.imgUrl} alt="" className="h-6 w-6 flex-none rounded-full bg-white/10" />
         {news.author.name}
       </div>
+      {news.datetime.toDateString() === news.updateDate.toDateString() ? <div className="flex gap-x-2.5">
+        <CalendarDaysIcon className="mt-0.5 h-6 w-6 flex-none text-gray-300" aria-hidden="true" />
+        Published:&nbsp;
+        {news.datetime.toDateString()} </div> : 
       <div className="flex gap-x-2.5">
-        <CalendarDaysIcon className="mt-0.5 h-5 w-5 flex-none text-gray-300" aria-hidden="true" />
+        <CalendarDaysIcon className="mt-0.5 h-6 w-6 flex-none text-gray-300" aria-hidden="true" />
+        Published:&nbsp;
         {news.datetime.toDateString()}
+        <ClockIcon class="h-6 w-6 text-gray-500" />
+        Updated:&nbsp; 
+        {news.updateDate.toDateString()}
       </div>
+      }
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{news.title}</h1>
         <p className="mt-6 text-xl leading-8">
           {news.desc}

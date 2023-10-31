@@ -23,8 +23,3 @@ import { getTeamsSoon } from '../../../../lib/prisma/read/teamsSoon.js'
         </main>
     )
   }
-
-  export async function generateStaticParams() {
-    const {teamsSoon} = await getTeamsSoon();
-    return teamsSoon.map(teamsSoon => ({ id: teamsSoon.id }));
-  }

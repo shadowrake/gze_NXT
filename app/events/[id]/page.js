@@ -6,10 +6,7 @@ import Footer from '../../../components/footer.js'
 import {FadeIn} from '../../../components/FadeIn.jsx'
 import Spons from '@components/sponsors_top.jsx'
 
-export async function generateStaticParams() {
-  const {event} = await getEvents();
-  return event.map(event => ({ id: event.id }));
-}
+
 
 export default async function event({ params }) {
   // Fetch necessary data for the blog post using params.id
@@ -27,8 +24,8 @@ export default async function event({ params }) {
         GZE staff
       </div>
       <div className="flex gap-x-2.5">
-        <CalendarDaysIcon className="mt-0.5 h-5 w-5 flex-none text-gray-300" aria-hidden="true" />
-        {event.datetime.toDateString()}
+        Starts: {event.startDate.toDateString()} |
+        Ends: {event.endDate.toDateString()}
       </div>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{event.title}</h1>
         <p className="mt-6 text-xl leading-8">
