@@ -30,24 +30,34 @@ export default async function Player({params}) {
             </p>
           </div>
         {Object.keys(match).length != 0 ?
+        <div>
         <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
           {match.map((match) => (
             <div key={match.id}>
               <div className="relative">
+                <a href={match.href ? match.href : "https://www.gamer.no/lag/greenzone-esports-cs/184666/kamper"}>
                 <div className="relative h-72 w-full overflow-hidden rounded-lg">
                   <img
-                    src={match.imgUrl ? match.imgUrl : "https://hermankristiansen.no/banner_gze_4k.png"}
+                    src={match.imgUrl ? match.imgUrl : "https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/d382efb8-c8ca-4bdc-6d8b-5da23559e500/public"}
                     alt={match.imageAlt}
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
                 <div className="relative mt-4">
                   <h3 className="text-lg font-medium text-gray-900">{match.name}</h3>
-                  <p className="mt-1 text-sm text-gray-500">{match.date.toString()}</p>
+                  <p className="text-sm font-medium text-gray-900">VS</p>
+                  <h3 className="text-lg font-medium text-gray-900">{match.team2}</h3>
+                  <p className="mt-1 text-sm text-gray-500">Starts: <br />{match.date.toDateString()} @ {match.date.toLocaleTimeString("en-UK", { timeZone: "Europe/Oslo" })} (CET)</p>
                 </div>
+                </a>
               </div>
             </div>
           ))}
+        </div>
+        <a href={`/games/${team.id}`} className="text-base mt-8 font-medium text-indigo-600 hover:text-indigo-500 md:block">
+          Click here to go back
+          <span aria-hidden="true"> &rarr;</span>
+        </a>
         </div>
         : <div className="mt-4 md:flex md:items-center flex-col md:justify-center">
         <a href={`/games/${team.id}`} className="text-base mb-6 font-medium text-indigo-600 hover:text-indigo-500 md:block">

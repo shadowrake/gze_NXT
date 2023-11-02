@@ -106,6 +106,7 @@ model matches {
   href     String
   keyword  String
   name     String
+  team2    String
 }
 
 model media {
@@ -169,11 +170,12 @@ model teamStaff {
 }
 
 model team_achievements {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  date    DateTime @db.Date
-  img     String
-  keyword String
-  name    String
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  date      DateTime @db.Date
+  img       String
+  keyword   String
+  name      String
+  organizer String
 }
 
 model teams {
