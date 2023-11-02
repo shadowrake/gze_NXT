@@ -95,10 +95,12 @@ model events {
 }
 
 model matches {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  date    DateTime @db.Date
-  keyword String
-  name    String
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  date     DateTime @db.Date
+  estiDate DateTime @db.Date
+  href     String
+  keyword  String
+  name     String
 }
 
 model media {
@@ -186,8 +188,8 @@ model teamsSoon {
 }
 
 model teamsinput {
-  id      String  @id @default(auto()) @map("_id") @db.ObjectId
-  dummy   String?
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  dummy   String
   keyword String
   name    String
 }

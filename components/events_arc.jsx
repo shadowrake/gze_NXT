@@ -8,7 +8,7 @@ import { getEvents } from '../lib/prisma/read/events.js'
     const events = event.filter((events) => events.endDate.toDateString() < Date.now())
     // Fliter data from external API to match today's date
     return (
-      <div className="bg-white py-24 sm:py-32">
+      <div className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Events</h2>
@@ -18,7 +18,7 @@ import { getEvents } from '../lib/prisma/read/events.js'
           </div>
           {Object.keys(events).length != 0 ? 
           <div>
-          <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {/* maps data from api */}
             {events.map((post) => (
               <article
@@ -57,11 +57,21 @@ import { getEvents } from '../lib/prisma/read/events.js'
               
         </div><a href='/events' className='text-black'>
                 <p className='mt-16 bg-green-200 text-center relative inline-flex items-center justify-center rounded-md p-2 text-lg font-bold hover:bg-green-300 hover:text-black-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>Current events</p>
-        </a></div>: <div className="mt-4 md:flex md:items-center md:justify-center">
-                <a href={`/events`} className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">
-                  No previous events found, go to current
-                  <span aria-hidden="true"> &rarr;</span>
+        </a></div>: <div className="mt-4 md:flex flex-col md:items-center md:justify-center">
+                <a href={`/events`} className="text-base mb-6 font-medium text-indigo-600 hover:text-indigo-500 md:block">
+                No previous events found, go to current
+                <span aria-hidden="true"> &rarr;</span>
                 </a>
+                <img
+                  src={"https://hermankristiansen.no/banner_gze_4k.png"}
+                  alt=""
+                  className="hidden md:block h-1/2 w-1/2 object-cover object-center"
+                  />
+                  <img
+                  src={"https://hermankristiansen.no/banner_gze_4k.png"}
+                  alt=""
+                  className="md:hidden h-1/2 w-full object-cover object-center"
+                  />
               </div>}
         
       </div>

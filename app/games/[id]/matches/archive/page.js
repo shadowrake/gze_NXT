@@ -4,7 +4,7 @@ import { getTeamsById } from "@lib/prisma/read/teams"
 import { getTeams } from "@lib/prisma/read/teams"
 import Footer from "@components/footer.js"
 import { FadeIn } from "@components/FadeIn.jsx"
-import Spons from "@components/sponsors_bottom.jsx"
+import Spons from "@components/sponsors_top.jsx"
 
 
 export default async function Player({params}) {
@@ -20,9 +20,16 @@ export default async function Player({params}) {
         <main className="bg-white">
         <NavBar />
         <FadeIn>
+        <Spons  />
       <div className="bg-white">
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6  lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Matches</h2>
+      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Matches</h2>
+            <p className="mt-2 text-lg leading-8 text-gray-600">
+            upcoming/current/previous Matches for the {team.title} team.
+            </p>
+          </div>
+        {Object.keys(match).length != 0 ?
         <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
           {match.map((match) => (
             <div key={match.id}>
@@ -42,9 +49,26 @@ export default async function Player({params}) {
             </div>
           ))}
         </div>
+        : <div className="mt-4 md:flex md:items-center flex-col md:justify-center">
+        <a href={`/games/${team.id}`} className="text-base mb-6 font-medium text-indigo-600 hover:text-indigo-500 md:block">
+          No matches found, click here to go back
+          <span aria-hidden="true"> &rarr;</span>
+        </a>
+        <img
+          src={match.imgUrl ? match.imgUrl : "https://hermankristiansen.no/banner_gze_4k.png"}
+          alt={match.imageAlt}
+          className="hidden md:block h-1/2 w-1/2 object-cover object-center"
+          />
+          <img
+          src={"https://hermankristiansen.no/banner_gze_4k.png"}
+          alt={match.imageAlt}
+          className="md:hidden h-1/2 w-full object-cover object-center"
+          />
+      </div>
+      }
       </div>
     </div>
-    <Spons  />
+    
     </FadeIn>
     <Footer />
     </main>

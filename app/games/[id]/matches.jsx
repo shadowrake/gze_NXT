@@ -32,7 +32,7 @@ export default async function Player({team}) {
         </div>
         <div className="mt-8 md:flex md:items-center md:justify-between">
           <a href={`/games/${team.id}/matches/archive`} className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">
-            See all matches
+            See all upcoming/current/previous matches
             <span aria-hidden="true"> &rarr;</span>
           </a>
         </div>

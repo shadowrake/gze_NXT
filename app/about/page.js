@@ -18,23 +18,22 @@ export default async function About() {
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Who are GreenZone Esports</h2>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-            We are an Esports organization, 
-            our staff is a friend group who are passionate about Esports.
-            We have a goal to recruit new/amateur players who are willing to be a part of our organization and try to achive greatness.
+        We are a devoted Esports organization, founded by a collective of individuals who are deeply passionate about the world of Esports. 
+        Our mission is to scout and recruit emerging talents who are willing to affiliate with our organization and aim for extraordinary success.
         </p>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-            Firstly, we are trying to gather teams for CSGO, R6 and LoL. 
-            Our dream is to big enough to compete on “the big stage”.
+        Our primary plan is to assemble robust teams for Counter-Strike 2 (CS2), Rainbow Six (R6), and League of Legends (LoL).
+        Our ultimate goal is to elevate our organization to a level where we can compete at the pinnacle of the Esports industry.
         </p>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-            Are you ready to <b>#enterthegreenzone</b>
+          Are you ready to make your mark and <b>#EnterTheGreenZone?</b>
         </p>
       </div>
     </div>
     <div className="bg-gray-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Meet our team</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Meet our staff team</h2>
         </div>
         <ul
           role="list"

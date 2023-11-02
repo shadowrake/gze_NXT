@@ -16,7 +16,7 @@ const ContactForm: React.FC<Readonly<ContactFormInputs>> = ({ email, gamerTag, i
                 dummy: string; name: string; id: React.Key; }, index) => (
                 <div key={person.id}>
                     <p>
-                    {person.name}: {person.dummy}</p>
+                    {person.name}: <br />{person.dummy}</p>
                 </div>
             ))}
         </p>
