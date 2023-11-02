@@ -6,7 +6,7 @@ export default function notFound() {
     <>
       <main className="relative isolate min-h-full">
         <NavBar />
-        <div class="bg-red-100 relative group">
+        <div className="bg-red-100 relative group">
         <img
           src="https://hermankristiansen.no/banner_gze_4k.png"
           alt=""

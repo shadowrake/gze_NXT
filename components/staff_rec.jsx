@@ -13,9 +13,9 @@
               <a href="/recruitment/staff">
               <div  className="group relative">
                 <div className="overflow-hidden rounded-lg bg-gray-100">
-                <div class="bg-red-100 relative group">
+                <div className="bg-red-100 relative group">
                   <img src="https://hermankristiansen.no/test.png" alt="" className="object-contain h-190 w-full object-center" />
-                  <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 inset-y-0 flex justify-center items-center text-xl bg-green-200 md:bg-opacity-10 text-black font-semibold"></div>
+                  <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 inset-y-0 flex justify-center items-center text-xl bg-green-200 md:bg-opacity-10 text-black font-semibold"></div>
                 </div>
                 </div>
               </div>

@@ -23,7 +23,9 @@ export default async function Player({team}) {
           {/* maps data from api */}
           {staff.map((person) => (
             <li key={person.name}>
-              <img className="mx-auto h-48 w-36 rounded-full md:h-56 md:w-44" src={person.img ? person.img : "https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/5fceade2-4fde-4115-a07a-0a2089daab00/public"} alt="" />
+              {person.img != "" ?
+              <img className="mx-auto h-48 w-36 rounded-full md:h-56 md:w-44" src={person.img} alt="" />
+              : <img className="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/5fceade2-4fde-4115-a07a-0a2089daab00/public" alt="" />}
               <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">{person.name}</h3>
               {person.age != "" ?
               <p className="text-base leading-7 text-gray-600">Age: {person.age}</p>
@@ -49,14 +51,14 @@ export default async function Player({team}) {
                     <span className="sr-only">Twitch</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
+                      className="h-5 w-5"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                       aria-hidden="true">
                       <path
                         d="M2.149 0l-1.612 4.119v16.836h5.731v3.045h3.224l3.045-3.045h4.657l6.269-6.269v-14.686h-21.314zm19.164 13.612l-3.582 3.582h-5.731l-3.045 3.045v-3.045h-4.836v-15.045h17.194v11.463zm-3.582-7.343v6.262h-2.149v-6.262h2.149zm-5.731 0v6.262h-2.149v-6.262h2.149z"
-                        fill-rule="evenodd"
-                        clip-rule="evenodd" />
+                        fillRule="evenodd"
+                        clipRule="evenodd" />
                     </svg>
                   </a>
                 </li>

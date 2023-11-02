@@ -86,7 +86,12 @@ model cc {
 model events {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   desc      String
+  desc2     String
+  desc3     String
+  desc4     String
+  desc5     String
   endDate   DateTime @db.Date
+  headline  String
   imgAlt    String
   imgUrl    String
   keyword   String
@@ -114,6 +119,11 @@ model news {
   author     NewsAuthor
   datetime   DateTime   @db.Date
   desc       String
+  desc2      String
+  desc3      String
+  desc4      String
+  desc5      String
+  headline   String
   imgAlt     String
   imgUrl     String
   keyword    String
@@ -124,6 +134,7 @@ model news {
 model players {
   id          String       @id @default(auto()) @map("_id") @db.ObjectId
   age         String
+  imgUrl      String
   keyword     String
   links       PlayersLinks
   name        String
@@ -176,9 +187,8 @@ model teams {
 }
 
 model teamsSoon {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   desc     String
-  href     String?
   imageAlt String
   imageSrc String
   keyword  String
