@@ -184,6 +184,7 @@ model teams {
   gamer_link String @map("gamer-link")
   imageAlt   String
   imageSrc   String
+  manager    String
   name       String
   title      String
 }

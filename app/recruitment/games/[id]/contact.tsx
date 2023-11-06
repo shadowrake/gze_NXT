@@ -22,7 +22,7 @@ type Input = {
   email: string;
   gamerTag: string;
   input: { name: string; id: React.Key; dummy: string}[];
-  teamSoon: {title: string};
+  team: {title: string};
   title: string;
   message: string;
 };
@@ -30,7 +30,7 @@ type Input = {
 
 
 
-export default function Contact({ input, teamSoon }: Input)  {
+export default function Contact({ input, team }: Input)  {
     const [data, setData] = useState<Input>();
     const recaptchaRef = React.useRef<ReCaptcha>(null);
     const [isVerified, setIsverified] = useState<boolean>(false);
@@ -49,7 +49,7 @@ export default function Contact({ input, teamSoon }: Input)  {
         email: "",
         gamerTag: "",
         input: input,
-        title: "",
+        title: team.title,
       },
     });
 
@@ -82,6 +82,7 @@ export default function Contact({ input, teamSoon }: Input)  {
     return (
         <div className="mt-10 sm:mt-0">
           <form
+            autoComplete="off"
             onSubmit={handleSubmit(processForm)}
             className="space-y-8 divide-y divide-gray-200 mx-auto max-w-2xl"
           >
@@ -89,11 +90,11 @@ export default function Contact({ input, teamSoon }: Input)  {
           <div className="sm:col-span-4">
           <input 
                     type="disabled"
-                    id="username"
-                    autoComplete="username"
-                    value={teamSoon.title}
+                    id="title"
+                    value={team.title}
+                    autoComplete="off"
                     className="hidden block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                    {...register("title")} />
+                    {...register("team.title")} />
           <label htmlFor="username" className="mt-2 block text-sm font-medium leading-6 text-gray-900">
             Email
           </label>
@@ -101,8 +102,8 @@ export default function Contact({ input, teamSoon }: Input)  {
           <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
             <input 
                     type="text"
-                    id="username"
-                    autoComplete="username"
+                    id="Email"
+                    autoComplete="off"
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="Email"
                     {...register("email", {required: "You need a vaild email"})} />

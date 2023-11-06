@@ -1,25 +1,25 @@
 import { getTeamsInput } from "../../../../lib/prisma/read/teaminput"
 import Contact from "./contact"
 
-export default async function rec_team({teamSoon}) {
+export default async function rec_team({team}) {
 
     // Fetch data from external API
     const {teamsinput} = await getTeamsInput()
 
     // Fliter data from external API to match the right team with the right keyword defined in the database
-    const input = teamsinput.filter((input) => teamSoon.name === input.keyword)
+    const input = teamsinput.filter((input) => team.name === input.keyword)
 
     return (
         <div className="container mx-auto sm:px-6 lg:px-8">{
             
       <div className="space-y-12 mx-1 my-8">
         <div className="border-b border-gray-900/10 pb-6">
-          <h2 className="text-lg font-semibold leading-7 text-gray-900">Recruitment form for {teamSoon.title}</h2>
+          <h2 className="text-lg font-semibold leading-7 text-gray-900">Recruitment form for {team.title}</h2>
           <p className="mt-1 text-sm leading-6 text-gray-600">
-            {teamSoon.desc}
+            {team.desc}
           </p>
           {/* passes down the filtered input to contact.tsx */}
-          <Contact input = {input} teamSoon={teamSoon}></Contact>
+          <Contact input = {input} team={team}></Contact>
         </div>
         <div className="">
           <h3 className="text-2xl font-semibold leading-7 text-gray-900">Alternative way to signup</h3>
@@ -33,15 +33,15 @@ export default async function rec_team({teamSoon}) {
           <div>
           <h3 className="mt-6 text-lg font-bold leading-7 text-gray-900 mx-2">OR</h3>
           <div className="mt-2 space-y-4">
-            { teamSoon.manager === "" ? 
+            { team.manager === "" ? 
             <p className="mt-4 text-xl font-semibold leading-7 text-gray-900">
-              We are looking for a team manager for {teamSoon.title}: <a href="/recruitment/staff" className="rounded-md bg-greenzone font-bold hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+              We are looking for a team manager for {team.title}: <a href="/recruitment/staff" className="rounded-md bg-greenzone font-bold hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                 Apply here
               </a>
             </p>
             :
             <p className="mt-4 text-xl font-bold leading-7 text-gray-900">
-              Contact our team manager on discord: <bold>{teamSoon.manager}</bold>
+              Contact our team manager on discord: <bold>{team.manager}</bold>
             </p>
             }
           </div>

@@ -11,10 +11,9 @@ export default async function Player({team}) {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">Staff</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              This is our staff for the {team.title} team
-            </p>
+            
           </div>
+          {Object.keys(staff).length === 0 ? <p className="mt-6 text-xl leading-8 text-gray-600">No staff found, if you want to be a team manager for our {team.title} team <a className="font-bold hover:text-black" href={`/recruitment/staff`}>apply here</a></p>:
           <ul
           role="list"
           className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
@@ -97,6 +96,7 @@ export default async function Player({team}) {
             </li>
           ))}
         </ul>
+          }
         </div>
       </div>
     )

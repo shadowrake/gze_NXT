@@ -2,14 +2,14 @@ import NavBar from "../../../../components/nav"
 import { FadeIn } from '../../../../components/FadeIn.jsx'
 import Footer from '../../../../components/footer.js'
 import Teams from './rec_team.jsx'
-import { getTeamsSoonById } from '../../../../lib/prisma/read/teamsSoon.js'
+import { getTeamsById } from '../../../../lib/prisma/read/teams.js'
 import { getTeamsSoon } from '../../../../lib/prisma/read/teamsSoon.js'
 
 
 
  
  export default async function recTeam({params}) {
-    const { teamSoon } = await getTeamsSoonById(params.id)
+    const { team } = await getTeamsById(params.id)
 
     return (
         <main className='bg-white'>
@@ -17,7 +17,7 @@ import { getTeamsSoon } from '../../../../lib/prisma/read/teamsSoon.js'
             {/* creates an fadein effect on the page */}
             <FadeIn>
             {/* passes down the teamsoon param to rec_team */}
-            <Teams teamSoon = {teamSoon}></Teams>
+            <Teams team = {team}></Teams>
             </FadeIn>
             <Footer></Footer>
         </main>
