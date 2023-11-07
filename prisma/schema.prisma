@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("MONGODB_URI_Read")
+  provider  = "mongodb"
+  url       = env("DATABASE_URL")
+  directUrl = env("MONGODB_URI_Read")
 }
 
 type CcGames {
@@ -29,13 +30,6 @@ type NewsAuthor {
   name   String
 }
 
-type PlayersLinks {
-  instagram String
-  twitch    String
-  twitter   String
-  youtube   String
-}
-
 type SlideshowHeaderSliderBtn {
   aria      String
   dataSlide String
@@ -57,10 +51,10 @@ type TeamStaffLinks {
 }
 
 model Staff {
-  id          String      @id @default(auto()) @map("_id") @db.ObjectId
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
   age         String
   img         String
-  links       StaffLinks?
+  links       StaffLinks
   name        String
   nationality String
   role        String
@@ -133,15 +127,7 @@ model news {
 }
 
 model players {
-  id          String       @id @default(auto()) @map("_id") @db.ObjectId
-  age         String
-  imgUrl      String
-  keyword     String
-  links       PlayersLinks
-  name        String
-  nationality String
-  role        String
-  team        String
+  id String @id @default(auto()) @map("_id") @db.ObjectId
 }
 
 model slideshowHeader {
