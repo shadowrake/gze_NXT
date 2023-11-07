@@ -4,6 +4,7 @@ import Footer from '../../../../components/footer.js'
 import Teams from './rec_team.jsx'
 import { getTeamsById } from '../../../../lib/prisma/read/teams.js'
 import { getTeamsSoon } from '../../../../lib/prisma/read/teamsSoon.js'
+export const runtime = 'edge';
 
 
 

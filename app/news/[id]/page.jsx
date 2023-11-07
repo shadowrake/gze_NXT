@@ -5,6 +5,7 @@ import NavBar from '../../../components/nav'
 import Footer from '../../../components/footer'
 import {FadeIn} from '../../../components/FadeIn'
 import Sponsor from '@components/sponsors_top.jsx'
+export const runtime = 'edge';
 
 
 export default async function news({params}) {

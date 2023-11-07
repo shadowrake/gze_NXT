@@ -5,6 +5,7 @@ import NavBar from '../../../components/nav.js'
 import Footer from '../../../components/footer.js'
 import {FadeIn} from '../../../components/FadeIn.jsx'
 import Spons from '@components/sponsors_top.jsx'
+export const runtime = 'edge';
 
 
 

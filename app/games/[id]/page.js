@@ -8,6 +8,7 @@ import { getTeams } from "../../../lib/prisma/read/teams";
 import Matches from "./matches";
 import Staff from "./staff";
 import Achiv from "./achiv";
+export const runtime = 'edge';
 
 export default async function playerPage({params}) {
     // get the team from api by id

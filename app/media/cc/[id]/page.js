@@ -5,6 +5,7 @@ import CCProfile from './cc_profile.jsx'
 import Footer from '@components/footer.js'
 import Spons from '@components/sponsors_top.jsx'
 import { FadeIn } from '@components/FadeIn.jsx'
+export const runtime = 'edge';
 
 
 export default async function cc({params}) {
