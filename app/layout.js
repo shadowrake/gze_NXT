@@ -15,8 +15,8 @@ export const metadata = {
   siteLanguage: 'en',
   siteLocale: 'en_US',
   twitterUsername: '@GreenZoneEsport',
-  authorName: 'GreenZone Esports',
-  authorUrl: 'https://greenzoneesports.com',
+  authorName: 'Herman Kristiansen',
+  authorUrl: 'https://hermankristiansen.no',
   metadata: "GreenZone Esports, Esports, Gaming, Gaming organization, Esports organization, GreenZone, norwegian, Norwegian, CS2, LoL, Counter strike 2, Leauge of legends",
   keywords: "GreenZone Esports, Esports, Gaming, Gaming organization, Esports organization, GreenZone, norwegian, Norwegian, CS2, LoL, Counter strike 2, Leauge of legends",
 }
