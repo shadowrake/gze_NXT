@@ -4,8 +4,8 @@ generator client {
 
 datasource db {
   provider  = "mongodb"
-  url       = env("MONGODB_URI_Read")
-  //directUrl = env("MONGODB_URI_Read")
+  url       = env("DATABASE_URL")
+  directUrl = env("MONGODB_URI_Read")
 }
 
 type CcGames {
