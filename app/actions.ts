@@ -34,11 +34,20 @@ export async function addEntry(data: Input) {
 }
 
 type ContactFormInputs = {
+    game: string;
     email: string;
-    gamerTag: string;
-    input: { name: string; id: React.Key; dummy: string}[];
-    title: string;
-  };
+    discordTag: string;
+    age: string;
+    hours: string;
+    gamertag: string;
+    role: string;
+    rank: string;
+    toxic: string;
+    teamPlayer: string;
+    prevExperience: string;
+    ambitons: string;
+    anythingElse: string;
+    };
 
 //Defines the Resend API key
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -49,16 +58,15 @@ const result = FormDataSchema.safeParse(data);
 
 if(result.success) {
 //Destructures the data from the client side form
-const {input, email, gamerTag, title} = result.data;
-console.log(title)
+const {game, email, discordTag, age, hours, gamertag, role, rank, toxic, teamPlayer, prevExperience, ambitons, anythingElse} = result.data;
 try{
 //Sends the email to the email address specified in the "to" field
 const data = await resend.emails.send({
     from: 'Greenzone Esports Recruitment <recruitment@greenzoneesports.com>',
     to: ['recruitment@greenzoneesports.com'],
-    subject: `New ${title} recruitment application`,
-    text: `Input: ${input}\nEmail: ${email}\nGamer tag: ${gamerTag}`,
-    react: ContactForm({input, email, gamerTag})
+    subject: `New ${game} recruitment application`,
+    text: `Email: ${age}\nEmail: ${hours}\nEmail: ${gamertag}\nEmail: ${role}\nEmail: ${rank}\nEmail: ${email}\nGamer tag: ${discordTag}`,
+    react: ContactForm({email, discordTag, age, hours, gamertag, role, rank, toxic, teamPlayer, prevExperience, ambitons, anythingElse})
 })
 //Returns a success message if the email was sent successfully
 return {success: true, data: data};

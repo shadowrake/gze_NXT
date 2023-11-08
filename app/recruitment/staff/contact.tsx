@@ -263,9 +263,11 @@ export default function Contact()  {
 
               <div className="mt-6 flex flex-col items-center justify-end gap-x-6">
               <div className="flex-row">
-                <button type="button" className="mt-6 mx-1 text-sm font-semibold leading-6 text-gray-900">
+              <a className="mr-6" href="/recruitment">
+                <button type="button"  className="mt-6 mx-1 text-sm font-semibold leading-6 text-gray-900">
                   Cancel
                 </button>
+                </a>
 
                 <button
                   className="mt-6 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"

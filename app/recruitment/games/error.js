@@ -1,8 +1,8 @@
 'use client' // Error components must be Client Components
  
 import { useEffect } from 'react'
-import Footer from "../../../../components/footer"
-import NavBar from "../../../../components/nav"
+import Footer from "../../../components/footer"
+import NavBar from "../../../components/nav"
  
 export default function Error({ error, reset }) {
   useEffect(() => {

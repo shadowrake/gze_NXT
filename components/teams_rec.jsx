@@ -14,7 +14,7 @@ import {getTeams} from '../lib/prisma/read/teams.js'
             {/* maps data from api */}
             {teams.map((teams) => (
               <div key={teams.id}>
-              <a href={`/recruitment/games/${teams.id}`}>
+              <a href={`/recruitment/games`}>
               <div  className="group relative">
                 <div className="overflow-hidden rounded-lg bg-gray-100">
                 <div className="bg-red-100 relative group">
