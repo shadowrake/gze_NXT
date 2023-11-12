@@ -22,7 +22,7 @@ export default async function About() {
         Our mission is to scout and recruit emerging talents who are willing to affiliate with our organization and aim for extraordinary success.
         </p>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-        Our primary plan is to assemble robust teams for Counter-Strike 2 (CS2), Rainbow Six (R6), and League of Legends (LoL).
+        Our primary plan is to assemble robust teams for Counter-Strike 2 (CS2), Rainbow Six (R6), League of Legends (LoL) and many other games to come.
         Our ultimate goal is to elevate our organization to a level where we can compete at the pinnacle of the Esports industry.
         </p>
         <p className="mt-6 text-lg leading-8 text-gray-600">
