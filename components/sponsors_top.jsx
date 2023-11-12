@@ -8,6 +8,7 @@ export default async function Spons() {
           <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
             {spons.map((sponsor) => (
             <img
+              key={sponsor.id}
               className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
               src={sponsor.img}
               alt={sponsor.imgAlt}
@@ -21,6 +22,7 @@ export default async function Spons() {
           <div className=" flex flex-row max-w-lg grid-cols-4 items-center gap-x-4 gap-y-5 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
             {spons.map((sponsor) => (
             <img
+              key={sponsor.id}
               className="col-span-2 max-h-8 w-full object-contain lg:col-span-1"
               src={sponsor.img}
               alt={sponsor.imgAlt}
