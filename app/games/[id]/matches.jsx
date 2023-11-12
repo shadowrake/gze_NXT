@@ -28,6 +28,9 @@ export default async function Player({team}) {
                   <p className="text-sm font-medium text-gray-900">VS</p>
                   <h3 className="text-lg font-medium text-gray-900">{match.team2}</h3>
                   <p className="mt-1 text-sm text-gray-500">Starts: <br />{match.date.toDateString()} @ {match.date.toLocaleTimeString("en-UK", { timeZone: "Europe/Oslo" })} (CET)</p>
+                  {match.winLoss === "win" ?
+                  <p className="mt-1 text-sm text-green-500">{match.winLoss}</p>
+                  : match.winLoss === "loss" ? <p className="mt-1 text-sm text-red-500">{match.winLoss}</p>: null}
                 </div>
                 </a>
               </div>

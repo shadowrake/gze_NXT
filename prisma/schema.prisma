@@ -101,12 +101,11 @@ model matches {
   keyword  String
   name     String
   team2    String
+  winLoss  String
 }
 
 model media {
-  id     String @id @default(auto()) @map("_id") @db.ObjectId
-  imgAlt String
-  imgUrl String
+  id String @id @default(auto()) @map("_id") @db.ObjectId
 }
 
 model news {
@@ -136,6 +135,14 @@ model slideshowHeader {
   img       String
   imgAlt    String
   sliderBtn SlideshowHeaderSliderBtn
+}
+
+model sponsors {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  href   String
+  img    String
+  imgAlt String
+  name   String
 }
 
 model staffRec {

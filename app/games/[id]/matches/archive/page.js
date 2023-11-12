@@ -49,6 +49,9 @@ export default async function Player({params}) {
                   <p className="text-sm font-medium text-gray-900">VS</p>
                   <h3 className="text-lg font-medium text-gray-900">{match.team2}</h3>
                   <p className="mt-1 text-sm text-gray-500">Starts: <br />{match.date.toDateString()} @ {match.date.toLocaleTimeString("en-UK", { timeZone: "Europe/Oslo" })} (CET)</p>
+                  {match.winLoss === "win" ?
+                  <p className="mt-1 text-base text-green-500">{match.winLoss.toUpperCase()}</p>
+                  : match.winLoss === "loss" ? <p className="mt-1 text-base text-red-500">{match.winLoss.toUpperCase()}</p>: null}
                 </div>
                 </a>
               </div>
