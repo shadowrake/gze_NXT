@@ -13,8 +13,28 @@ export default function Main_media({media}) {
 
     return (
         <div className="bg-white">
+            <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our pictures</h2>
+          </div>
+            {Object.keys(media).length === 0 ? 
+            <div className="mt-4 md:flex md:items-center flex-col md:justify-center">
+                <a href={`/`} className="text-lg mb-6 font-medium text-indigo-600 hover:text-indigo-500 md:block">
+                No pictures found, click here to go back
+                <span aria-hidden="true"> &rarr;</span>
+                </a>
+                <img
+                src={"https://hermankristiansen.no/banner_gze_4k.png"}
+                alt=""
+                className="hidden md:block h-1/2 w-1/2 object-cover object-center"
+                />
+                <img
+                src={"https://hermankristiansen.no/banner_gze_4k.png"}
+                alt=""
+                className="md:hidden h-1/2 w-full object-cover object-center"
+                />
+            </div>
+            :
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                
             {/* Picture gallery */}
             <Swiper
                 spaceBetween={10}
@@ -51,6 +71,7 @@ export default function Main_media({media}) {
                 </ul> 
         </nav>
         </div>
+        }
         </div>
     )
   }

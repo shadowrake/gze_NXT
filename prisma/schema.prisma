@@ -146,6 +146,7 @@ model staffRec {
 
 model teamStaff {
   id          String         @id @default(auto()) @map("_id") @db.ObjectId
+  activity    String
   age         String
   img         String
   keyword     String
@@ -166,6 +167,7 @@ model team_achievements {
 
 model teams {
   id         String @id @default(auto()) @map("_id") @db.ObjectId
+  activity   String
   desc       String
   gamer_link String @map("gamer-link")
   imageAlt   String
