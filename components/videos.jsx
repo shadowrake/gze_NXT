@@ -8,6 +8,7 @@ export default async function VideoMedia() {
           <div className="flex items-center justify-between space-x-4">
             <h2 className="text-2xl font-medium text-gray-900">Videos from GZE staff and players</h2>
           </div>
+          {Object.keys(videoMedia).length != 0 ?
           <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
             {videoMedia.map((product) => (
               <div key={product.id} className="group relative">
@@ -24,7 +25,24 @@ export default async function VideoMedia() {
                 </div>
               </div>
             ))}
-          </div>
+              </div>
+              : <div className="mt-4 md:flex md:items-center flex-col md:justify-center">
+              <a href={`/`} className="text-lg mb-6 font-medium text-indigo-600 hover:text-indigo-500 md:block">
+              No Videos found, click here to go back
+              <span aria-hidden="true"> &rarr;</span>
+              </a>
+              <img
+              src={"https://hermankristiansen.no/banner_gze_4k.png"}
+              alt=""
+              className="hidden md:block h-1/2 w-1/2 object-cover object-center"
+              />
+              <img
+              src={"https://hermankristiansen.no/banner_gze_4k.png"}
+              alt=""
+              className="md:hidden h-1/2 w-full object-cover object-center"
+              />
+              </div>
+      }
         </div>
       </div>
     )
