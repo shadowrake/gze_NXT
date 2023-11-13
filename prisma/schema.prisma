@@ -53,6 +53,7 @@ type TeamStaffLinks {
 model Staff {
   id          String     @id @default(auto()) @map("_id") @db.ObjectId
   age         String
+  filter      String
   img         String
   links       StaffLinks
   name        String
