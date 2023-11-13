@@ -87,6 +87,7 @@ export default function Contact()  {
                 <option>Leauge of Legends</option>
                 <option>Rocket leauge</option>
                 <option>Rainbow-six:siege</option>
+                <option>Fortnite</option>
             </select>
             </div>
             {errors.role?.message && (
