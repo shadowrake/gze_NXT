@@ -38,7 +38,7 @@ export default async function About() {
         <div className="mx-auto max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Meet our staff team</h2>
         </div>
-        <h1 className='mt-5 text-3xl'>Executives</h1>
+        <h1 className='mt-5 text-3xl'>Executive management</h1>
         <ul
           role="list"
           className="mx-auto mt-5 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8"
