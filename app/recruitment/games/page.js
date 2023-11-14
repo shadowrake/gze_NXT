@@ -39,7 +39,7 @@ import { notFound } from 'next/navigation'
                 <h3 className="mt-6 text-lg font-bold leading-7 text-gray-900 mx-2">OR</h3>
                 <div className="mt-2 space-y-4">
                 <p className="mt-4 text-xl font-bold leading-7 text-gray-900">
-                    Contact our team managers on discord | shadowrake - CS | ingstorm - R6 | supernothuman0 - RL
+                    Contact our team managers on discord | shadowrake - CS | We need a manager for our other teams <a className="mt-4 bg-greenzone text-black text-center relative inline-flex items-center justify-center rounded-md text-xl font-bold hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" href="/recruitment/staff">Apply here</a>
                   </p>
                 </div>
                 </div>
