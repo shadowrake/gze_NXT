@@ -2,7 +2,6 @@ import NavBar from "../../../components/nav"
 import { FadeIn } from '../../../components/FadeIn.jsx'
 import Footer from '../../../components/footer.js'
 import Staff from './rec_staff.js'
-export const runtime = 'edge';
  
  export default async function recTeam() {
 
