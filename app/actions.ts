@@ -14,6 +14,25 @@ import ContactForm from "@components/contact_form_email";
 
 import ContactFormS from "@components/contact_form_emailS";
 
+type Input = {
+    email: string;
+    gamerTag: string;
+    input: { name: string; id: React.Key }[];
+  };
+  
+
+export async function addEntry(data: Input) {
+  const result = FormDataSchema.safeParse(data);
+
+    if (result.success) {
+        return {success: true, data: result.data};
+    }
+
+    if(result.error) {
+        return {success: false, error: result.error.format()};
+    }
+}
+
 type ContactFormInputs = {
     game: string;
     email: string;
