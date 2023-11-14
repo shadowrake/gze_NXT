@@ -5,13 +5,12 @@ import React from "react"
 import { useState } from "react";
 import ReCaptcha from "react-google-recaptcha"
 import { toast } from "sonner";
-import ContactForm from "@components/contact_form_email";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm, SubmitHandler, useFieldArray, set } from "react-hook-form";
 import { FormDataSchema } from "@lib/utils/schema";
 import { z } from "zod";
-import { addEntry, sendEmail, verifyCaptcha } from "app/actions";
+import { sendEmail, verifyCaptcha } from "app/actions";
 
 
 
