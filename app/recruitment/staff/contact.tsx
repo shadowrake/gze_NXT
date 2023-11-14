@@ -11,7 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler, useFieldArray, set } from "react-hook-form";
 import { FormDataSchemas } from "@lib/utils/schemaS";
 import { z } from "zod";
-import { addEntry, sendEmailS, verifyCaptcha } from "app/actions";
+import { sendEmailS, verifyCaptcha } from "app/actions";
 
 
 
