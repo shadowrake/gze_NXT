@@ -13,6 +13,7 @@ export default async function rec_team() {
       <div className="space-y-12 mx-1 my-8">
         <div className="border-b border-gray-900/10 pb-6">
           <h2 className="text-lg font-semibold leading-7 text-gray-900">Recruitment form for Staff</h2>
+          <h4 className="mt-1 text-sm leading-6 text-red-600">An error with form, Use the alternative ways at the bottom of page until a fix is deployed.</h4>
           <p className="mt-1 text-sm leading-6 text-gray-600">
             Would you like to join our staff team? Fill out the form below and we will get back to you as soon as possible. You can write in English or Norwegian.
           </p>
