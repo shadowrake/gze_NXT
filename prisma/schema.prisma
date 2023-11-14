@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("MONGODB_URI_Read")
+  provider  = "mongodb"
+  url       = env("DATABASE_URL")
+  directUrl = env("MONGODB_URI_Read")
 }
 
 type CcGames {
@@ -34,10 +35,27 @@ type SlideshowHeaderSliderBtn {
   dataSlide String
 }
 
+type StaffLinks {
+  instagram String
+  linkedin  String
+  twitch    String
+  twitter   String
+  youtube   String
+}
+
+type TeamStaffLinks {
+  instagram String
+  twitch    String
+  twitter   String
+  youtube   String
+}
+
 model Staff {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
   age         String
+  filter      String
   img         String
+  links       StaffLinks
   name        String
   nationality String
   role        String
@@ -61,44 +79,55 @@ model cc {
 }
 
 model events {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  datetime DateTime @db.Date
-  desc     String
-  imgAlt   String
-  imgUrl   String
-  keyword  String
-  title    String
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  desc      String
+  desc2     String
+  desc3     String
+  desc4     String
+  desc5     String
+  endDate   DateTime @db.Date
+  headline  String
+  imgAlt    String
+  imgUrl    String
+  keyword   String
+  startDate DateTime @db.Date
+  title     String
 }
 
 model matches {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  date    DateTime @db.Date
-  keyword String
-  name    String
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  date     DateTime @db.Date
+  estiDate DateTime @db.Date
+  href     String
+  keyword  String
+  name     String
+  team2    String
+  winLoss  String
 }
 
 model media {
-  id     String @id @default(auto()) @map("_id") @db.ObjectId
-  imgAlt String
-  imgUrl String
+  id String @id @default(auto()) @map("_id") @db.ObjectId
 }
 
 model news {
-  id       String     @id @default(auto()) @map("_id") @db.ObjectId
-  author   NewsAuthor
-  datetime DateTime   @db.Date
-  desc     String
-  imgAlt   String
-  imgUrl   String
-  keyword  String
-  title    String
+  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  author     NewsAuthor
+  datetime   DateTime   @db.Date
+  desc       String
+  desc2      String
+  desc3      String
+  desc4      String
+  desc5      String
+  headline   String
+  imgAlt     String
+  imgUrl     String
+  keyword    String
+  title      String
+  updateDate DateTime   @db.Date
 }
 
 model players {
-  id      String  @id @default(auto()) @map("_id") @db.ObjectId
-  keyword String
-  name    String
-  team    String?
+  id String @id @default(auto()) @map("_id") @db.ObjectId
 }
 
 model slideshowHeader {
@@ -109,6 +138,14 @@ model slideshowHeader {
   sliderBtn SlideshowHeaderSliderBtn
 }
 
+model sponsors {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  href   String
+  img    String
+  imgAlt String
+  name   String
+}
+
 model staffRec {
   id      String @id @default(auto()) @map("_id") @db.ObjectId
   keyword String
@@ -116,37 +153,41 @@ model staffRec {
 }
 
 model teamStaff {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String         @id @default(auto()) @map("_id") @db.ObjectId
+  activity    String
   age         String
   img         String
   keyword     String
+  links       TeamStaffLinks
   name        String
   nationality String
   role        String
 }
 
 model team_achievements {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  date    DateTime @db.Date
-  img     String
-  keyword String
-  name    String
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  date      DateTime @db.Date
+  img       String
+  keyword   String
+  name      String
+  organizer String
 }
 
 model teams {
   id         String @id @default(auto()) @map("_id") @db.ObjectId
+  activity   String
   desc       String
   gamer_link String @map("gamer-link")
   imageAlt   String
   imageSrc   String
+  manager    String
   name       String
   title      String
 }
 
 model teamsSoon {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   desc     String
-  href     String?
   imageAlt String
   imageSrc String
   keyword  String
@@ -156,12 +197,19 @@ model teamsSoon {
 }
 
 model teamsinput {
-  id      String  @id @default(auto()) @map("_id") @db.ObjectId
-  dummy   String?
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  dummy   String
   keyword String
   name    String
 }
 
 model users {
   id String @id @default(auto()) @map("_id") @db.ObjectId
+}
+
+model videoMedia {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  published String
+  title     String
+  url       String
 }

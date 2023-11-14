@@ -35,7 +35,7 @@ export default function NavBar() {
                     src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/8f82cc2d-9c49-45e4-4106-8b24a8e47b00/public"
                     alt="Greenzone Esports logo"
                   />
-                  GZ Esports
+                  <p className='hidden md:block'>GreenZone Esports</p>
                 </div>
                 <div className="hidden md:ml-6 md:flex md:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}

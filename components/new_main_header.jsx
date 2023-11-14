@@ -5,10 +5,8 @@ import Spons from './sponsors_bottom'
 import Events from './events_main'
 import { Carousel } from "@material-tailwind/react";
 
-export default async function events_main({slide}) {
-
+export default function events_main({slide, news}) {
     return (
-      
       <Carousel
       className=""
       nextArrow={false}
@@ -34,7 +32,7 @@ export default async function events_main({slide}) {
         <img 
         src={item.img}
         alt={item.imgAlt}
-        className="h-full w-full object-cover">
+        className="md:h-full h-52 w-full object-cover">
         </img>
         </a>
         ))}

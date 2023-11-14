@@ -12,7 +12,8 @@ import {getCC} from '../lib/prisma/read/cc.js'
   
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
             {cc.map((creator) => (
-              <a key={creator.id} href={`/media/cc/${creator.id}`} className="group">
+              <div key={creator.id}>
+              <a  href={`/media/cc/${creator.id}`} className="group">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg sm:aspect-h-3 sm:aspect-w-2">
                   <img
                     src={creator.img}
@@ -20,14 +21,14 @@ import {getCC} from '../lib/prisma/read/cc.js'
                     className="h-full w-full object-cover object-center"
                   />
                   <div className='hidden md:block'>
-                  <div class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 inset-y-0 flex flex-col justify-center items-center text-xl bg-green-200 md:bg-opacity-30 text-black font-semibold">
+                  <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 inset-y-0 flex flex-col justify-center items-center text-xl bg-green-200 md:bg-opacity-30 text-black font-semibold">
                   
                   <h3 className="mt-1 px-2 text-3xl font-bold text-black">{creator.gamertag.toUpperCase()}</h3>
                   <p className="mt-1 px-2 bg-white rounded text-base italic text-black">{creator.role.toUpperCase()}</p>
                   <p className="mt-1 px-2 text-sm text-black">{creator.age}, {creator.Nationality.toUpperCase()}</p>
                   </div>
                 </div>
-                <div class="md:hidden absolute inset-x-0 h-1/4 inset-y-3/4 flex flex-col justify-center items-center text-xl bg-green-200 md:bg-opacity-30 text-black font-semibold">
+                <div className="md:hidden absolute inset-x-0 h-1/4 inset-y-3/4 flex flex-col justify-center items-center text-xl bg-green-200 md:bg-opacity-30 text-black font-semibold">
                   <h3 className="mt-1 px-2 text-3xl font-bold text-black">{creator.gamertag.toUpperCase()}</h3>
                   <p className="mt-1 px-2 bg-white rounded text-base italic text-black">{creator.role.toUpperCase()}</p>
                   <p className="mt-1 px-2 text-sm text-black">{creator.age}, {creator.Nationality.toUpperCase()}</p>
@@ -35,6 +36,7 @@ import {getCC} from '../lib/prisma/read/cc.js'
                 </div>
                 
               </a>
+              </div>
             ))}
           </div>
         </div>

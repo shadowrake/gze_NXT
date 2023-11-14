@@ -3,7 +3,7 @@ import { FadeIn } from '../../../components/FadeIn.jsx'
 import Footer from '../../../components/footer.js'
 import Staff from './rec_staff.js'
  
- export default async function recTeam({params}) {
+ export default async function recTeam() {
 
     return (
         <main className='bg-white'>

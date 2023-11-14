@@ -9,15 +9,15 @@ const ContactFormS: React.FC<Readonly<ContactFormInputs>> = ({ email, gamerTag, 
     return <div>
         <h1></h1>
         <p>
-            Fornavn: {name} {surname} <br />
-            Age: {age} <br />
-            Email: {email} <br />
-            Discord: {gamerTag} <br />
-            Role: {role} <br />
-            If team manager, what game? else, let it be blank: {teamManager} <br />
-            Why would you like to join our team?: <br /> {joinTeam} <br />
-            What qualities can you bring to the team?: <br /> {qualities} <br />
-            Anything else?: <br /> {anythingElse} <br />
+            Fornavn: {name} {surname} <br /><br />
+            Age: {age} <br /><br />
+            Email: {email} <br /><br />
+            Discord: {gamerTag} <br /><br />
+            Role: {role} <br /><br />
+            If team manager, what game? else, let it be blank: {teamManager} <br /><br />
+            Why would you like to join our team?: <br /> {joinTeam} <br /><br />
+            What qualities can you bring to the team?: <br /> {qualities} <br /><br />
+            Anything else?: <br /> {anythingElse} <br /><br />
         </p>
     </div>;
 }

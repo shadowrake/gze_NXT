@@ -1,11 +1,11 @@
-import { getMatches } from "../../../lib/prisma/read/matches.js"
+import { getMatchesLimitFour } from "../../../lib/prisma/read/matches.js"
 
 export default async function Player({team}) {
     // Fetch data from external API
-    const {matches} = await getMatches()
+    const {matches} = await getMatchesLimitFour()
 
     // Fliter data from external API to match today's date and team with the right keyword defined in the database
-    const match = matches.filter((player) => player.date >= Date.now() && team.name === player.keyword)
+    const match = matches.filter((player) => player.estiDate >= Date.now() && team.name === player.keyword)
 
     return (
       <div className="bg-white">
@@ -15,6 +15,7 @@ export default async function Player({team}) {
           {match.map((match) => (
             <div key={match.id}>
               <div className="relative">
+                <a href={match.href ? match.href : "https://www.gamer.no/lag/greenzone-esports-cs/184666/kamper"}>
                 <div className="relative h-72 w-full overflow-hidden rounded-lg">
                   <img
                     src={match.imgUrl ? match.imgUrl : "https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/d382efb8-c8ca-4bdc-6d8b-5da23559e500/public"}
@@ -24,15 +25,21 @@ export default async function Player({team}) {
                 </div>
                 <div className="relative mt-4">
                   <h3 className="text-lg font-medium text-gray-900">{match.name}</h3>
-                  <p className="mt-1 text-sm text-gray-500">{match.date.toString()}</p>
+                  <p className="text-sm font-medium text-gray-900">VS</p>
+                  <h3 className="text-lg font-medium text-gray-900">{match.team2}</h3>
+                  <p className="mt-1 text-sm text-gray-500">Starts: <br />{match.date.toDateString()} @ {match.date.toLocaleTimeString("en-UK", { timeZone: "Europe/Oslo" })} (CET)</p>
+                  {match.winLoss === "win" ?
+                  <p className="mt-1 text-sm text-green-500">{match.winLoss}</p>
+                  : match.winLoss === "loss" ? <p className="mt-1 text-sm text-red-500">{match.winLoss}</p>: null}
                 </div>
+                </a>
               </div>
             </div>
           ))}
         </div>
         <div className="mt-8 md:flex md:items-center md:justify-between">
           <a href={`/games/${team.id}/matches/archive`} className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">
-            See all matches
+            See all upcoming/current/previous matches
             <span aria-hidden="true"> &rarr;</span>
           </a>
         </div>
