@@ -1,7 +1,6 @@
 import './globals.scss'
 import { Inter } from 'next/font/google'
 import { Toaster } from 'sonner'
-export const runtime = 'edge';
 
 
 const inter = Inter({ subsets: ['latin'] })
