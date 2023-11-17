@@ -6,7 +6,7 @@ export default function howTo() {
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Apply with discord</h1>
         <p className="mt-6 text-xl leading-8">
-          This is a short guide on how to apply for a team in the <a className='text-black text-center relative inline-flex items-center justify-center rounded-md text-lg font-bold hover:text-green-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500' href='https://discord.gg/gze'>GZE discord.</a> 
+          This is a short guide on how to apply for a team in the <a className='text-black text-center relative inline-flex items-center justify-center rounded-md text-lg font-bold hover:text-green-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500' href='https://discord.gg/cTCqsEbxhd'>GZE discord.</a> 
         </p>
         <div className="mt-10 max-w-2xl">
         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900">Optional step</h1>

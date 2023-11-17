@@ -87,7 +87,7 @@ const navigation = {
       },
       {
         name: 'Discord',
-        href: 'https://discord.gg/gze',
+        href: 'https://discord.gg/cTCqsEbxhd ',
         icon: (props) => (
           <svg
             className="h-5 w-5"
