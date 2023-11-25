@@ -99,12 +99,14 @@ export async function sendEmailS(data: Inputs) {
   }
 
   export async function verifyCaptcha(token: string | null) {
-    const res = await axios.post(
+    const res = await fetch(
       `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${token}`
-    )
-    if (res.data.success) {
-      return "success!"
+    );
+    const data = await res.json();
+
+    if (data.success) {
+      return "success!";
     } else {
-      throw new Error("Failed Captcha")
+      throw new Error("Failed Captcha");
     }
   }
