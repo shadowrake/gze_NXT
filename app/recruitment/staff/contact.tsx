@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react"
-export const dynamic = 'force-dynamic';
 import { useState } from "react";
 import ReCaptcha from "react-google-recaptcha"
 import { toast } from "sonner";

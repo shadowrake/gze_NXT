@@ -43,12 +43,17 @@ if(result.success) {
 const {game, email, discordTag, age, hours, gamertag, role, rank, toxic, teamPlayer, prevExperience, ambitons, anythingElse} = result.data;
 try{
 //Sends the email to the email address specified in the "to" field
-const data = await resend.emails.send({
+const data = axios.post('https://api.resend.com/emails',{
     from: 'Greenzone Esports Recruitment <recruitment@greenzoneesports.com>',
     to: ['recruitment@greenzoneesports.com'],
     subject: `New ${game} recruitment application`,
     text: `Email: ${age}\nEmail: ${hours}\nEmail: ${gamertag}\nEmail: ${role}\nEmail: ${rank}\nEmail: ${email}\nGamer tag: ${discordTag}`,
     react: ContactForm({email, discordTag, age, hours, gamertag, role, rank, toxic, teamPlayer, prevExperience, ambitons, anythingElse})
+},{
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${resend}`,
+  },
 })
 //Returns a success message if the email was sent successfully
 return {success: true, data: data};
