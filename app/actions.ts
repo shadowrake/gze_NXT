@@ -14,6 +14,7 @@ import ContactForm from "@components/contact_form_email";
 
 import ContactFormS from "@components/contact_form_emailS";
 
+
 type ContactFormInputs = {
     game: string;
     email: string;
