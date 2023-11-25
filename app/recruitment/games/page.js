@@ -3,7 +3,7 @@ import { FadeIn } from '../../../components/FadeIn.jsx'
 import Footer from '../../../components/footer.js'
 import Contact from './contact.tsx'
 import { notFound } from 'next/navigation'
-
+export const runtime = 'edge' 
 
 
 
