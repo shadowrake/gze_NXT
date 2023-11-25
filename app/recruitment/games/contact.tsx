@@ -42,15 +42,18 @@ export default function Contact()  {
     const processForm: SubmitHandler<Input> = async data => {
       const result = await sendEmail(data);
 
-      if(result?.success){
-        console.log({data: result.data});
+      if (result?.success) {
+        console.log({ data: result.data });
         toast.success("Email sent");
         reset();
         window.location.href = "/recruitment";
         return;
       }
 
-      console.log(result?.error)
+      if (result && 'error' in result) {
+        console.log(result.error);
+      }
+
       toast.error("Error sending email");
 
       
