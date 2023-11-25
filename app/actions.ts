@@ -35,36 +35,37 @@ type ContactFormInputs = {
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function sendEmail(data: ContactFormInputs) {
-//Validates the data sent from the client side form and returns an error if the data is not valid
-const result = FormDataSchema.safeParse(data);
+  const result = FormDataSchema.safeParse(data);
 
-if(result.success) {
-//Destructures the data from the client side form
-const {game, email, discordTag, age, hours, gamertag, role, rank, toxic, teamPlayer, prevExperience, ambitons, anythingElse} = result.data;
-try{
-//Sends the email to the email address specified in the "to" field
-const data = axios.post('https://api.resend.com/emails',{
-    from: 'Greenzone Esports Recruitment <recruitment@greenzoneesports.com>',
-    to: ['recruitment@greenzoneesports.com'],
-    subject: `New ${game} recruitment application`,
-    text: `Email: ${age}\nEmail: ${hours}\nEmail: ${gamertag}\nEmail: ${role}\nEmail: ${rank}\nEmail: ${email}\nGamer tag: ${discordTag}`,
-    react: ContactForm({email, discordTag, age, hours, gamertag, role, rank, toxic, teamPlayer, prevExperience, ambitons, anythingElse})
-},{
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${resend}`,
-  },
-})
-//Returns a success message if the email was sent successfully
-return {success: true, data: data};
-} catch (error) {
-return {success: false, error: error};
-}
-}
-//Returns an error if the data sent from the client side form is not valid
-if(result.error) {
-return {success: false, error: result.error.format()};
-}
+  if(result.success) {
+    const {game, email, discordTag, age, hours, gamertag, role, rank, toxic, teamPlayer, prevExperience, ambitons, anythingElse} = result.data;
+
+    try {
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${resend}`,
+        },
+        body: JSON.stringify({
+          from: 'Greenzone Esports Recruitment <recruitment@greenzoneesports.com>',
+          to: ['recruitment@greenzoneesports.com'],
+          subject: `New ${game} recruitment application`,
+          text: `Email: ${age}\nEmail: ${hours}\nEmail: ${gamertag}\nEmail: ${role}\nEmail: ${rank}\nEmail: ${email}\nGamer tag: ${discordTag}`,
+          react: ContactForm({email, discordTag, age, hours, gamertag, role, rank, toxic, teamPlayer, prevExperience, ambitons, anythingElse})
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error(`Failed to send email: ${res.status} ${res.statusText}`);
+      }
+
+      const data = await res.json();
+      return {success: true, data: data};
+    } catch (error) {
+      // Handle error
+    }
+  }
 }
 
 type Inputs = z.infer<typeof FormDataSchemas>;
