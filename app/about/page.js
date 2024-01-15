@@ -128,13 +128,15 @@ export default async function About() {
             </li>
           ))}
         </ul>
+        {/*
         <h1 className='mt-10 text-3xl'>Esports management</h1>
         <ul
           role="list"
           className="mx-auto mt-5 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8"
         >
-          
+      
           {esports.map((person) => (
+            
             <li key={person.id} className="rounded-2xl bg-greenzone-2 px-8 py-10">
               {person.img === "" ?
               <img className="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src="https://imagedelivery.net/x1uwLjrNlt5Jirxyo_Zhlg/5fceade2-4fde-4115-a07a-0a2089daab00/public" alt="" />
@@ -219,6 +221,7 @@ export default async function About() {
             </li>
           ))}
         </ul>
+          */}
         <h1 className='mt-10 text-3xl'>Community management</h1>
         <ul
           role="list"
