@@ -2,8 +2,7 @@ import NavBar from "../../../components/nav"
 import { FadeIn } from '../../../components/FadeIn.jsx'
 import Footer from '../../../components/footer.js'
 import Staff from './rec_staff.js'
- 
- export default async function recTeam() {
+export default async function recTeam() {
 
     return (
         <main className='bg-white'>
