@@ -222,6 +222,7 @@ export default async function About() {
           ))}
         </ul>
           */}
+          {/*
         <h1 className='mt-10 text-3xl'>Community management</h1>
         <ul
           role="list"
@@ -312,8 +313,10 @@ export default async function About() {
             </li>
           ))}
         </ul>
+        */}
       </div>
     </div>
+    
     
     </FadeIn>
     <Footer />
