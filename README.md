@@ -5,3 +5,5 @@ Due to the closure of Greenzone esports, the fact I created the whole site and t
 
 ## What is the tech stack?
 Next.js, Node v.20/Edge (contact doesn't work on edge) runtime, mongodb with prisma layer, mainly Javascript with some typescript, tailwind
+
+## The project is dead and will not be updated
