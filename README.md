@@ -1,4 +1,4 @@
-# Website GZE
+# Source code for GZE's website 
 Website: https://greenzoneesports.com
 
 ## Reason to make the repo public?
